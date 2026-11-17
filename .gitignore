@@ -1,1 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions & executables
+*.obj
+*.o
+*.a
+*.lib
+*.exe
+*.dll
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+
+# Databases and large index artifacts
+*.sqlite
+*.sqlite3
+*.db
+artifacts/fogstar_index.sqlite
+artifacts/fogstar_index.sha256
+_rebuild/artifacts/fogstar_index.sqlite
+_rebuild/artifacts/fogstar_index.sha256
+_rebuild/artifacts/downloads/
+_rebuild/artifacts/recordings/
+_rebuild/artifacts/parity_test.exe
+
+# Large dataset files (>100MB exceeds GitHub push limits)
+fogstar/sensor_data.csv
 raw/fogstar/sensor_data.csv
+**/sensor_data.csv
