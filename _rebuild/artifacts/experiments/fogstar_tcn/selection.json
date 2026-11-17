@@ -1,0 +1,385 @@
+{
+  "name": "fogstar_tcn",
+  "kind": "tcn",
+  "parameters": 1669,
+  "source_sha256": {
+    "data_pipeline.py": "f6e438d04ed29b8a6ec7c570d5c9d480f055878760473027d46c8c3318ebccc1",
+    "models.py": "0e92c103f1c306e21aa688b0b001feebcd1c8f9d282f7f62e682ed6ab9f03ee3",
+    "train.py": "b47d775d80ea495ffc9e74db22ac7ababb3c87b98d34b8f86de4694f91fab32a",
+    "evaluation.py": "a229798a0ab84b96500f2bbdbd6a0e77c3e725fa6cb3a3f41ac30ea49bbaeb29"
+  },
+  "dataset_sha256": [
+    "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477"
+  ],
+  "peak_cuda_memory_bytes": 30780928,
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "seed": 20261117,
+  "epochs": 16,
+  "representation": "gravity",
+  "overlap": 0.5,
+  "normalization": {
+    "mean": [
+      -9.862947463989258,
+      1.160541296005249,
+      0.23288178443908691
+    ],
+    "std": [
+      2.292349338531494,
+      3.7120790481567383,
+      2.3527443408966064
+    ]
+  },
+  "sampling": "balanced with replacement, maximum 24000 windows/epoch",
+  "positive_loss_weight": 7.086269103774856,
+  "validation_selection_score": 0.5106838018535288,
+  "alarm": {
+    "high": 0.25,
+    "low": 0.05,
+    "confirm": 2,
+    "alpha": 0.6
+  },
+  "splits": {
+    "train": [
+      "fogstar:1",
+      "fogstar:10",
+      "fogstar:11",
+      "fogstar:12",
+      "fogstar:13",
+      "fogstar:14",
+      "fogstar:15",
+      "fogstar:16",
+      "fogstar:18",
+      "fogstar:22",
+      "fogstar:5",
+      "fogstar:7",
+      "fogstar:8",
+      "fogstar:9"
+    ],
+    "validation": [
+      "fogstar:17",
+      "fogstar:2",
+      "fogstar:20",
+      "fogstar:21"
+    ],
+    "test": [
+      "fogstar:19",
+      "fogstar:3",
+      "fogstar:4",
+      "fogstar:6"
+    ]
+  },
+  "validation": {
+    "window": {
+      "n": 9668,
+      "accuracy": 0.7421390153082333,
+      "precision": 0.6106711915535445,
+      "recall": 0.8832833378783747,
+      "specificity": 0.6558906848858523,
+      "f1": 0.7221045591349905,
+      "pr_auc": 0.6025102329291148,
+      "roc_auc": 0.7921018935713241,
+      "confusion_matrix": [
+        [
+          3936,
+          2065
+        ],
+        [
+          428,
+          3239
+        ]
+      ]
+    },
+    "event": {
+      "events": 64,
+      "predicted_events": 78,
+      "matched": 45,
+      "false_events": 33,
+      "valid_seconds": 1929.84,
+      "fog_seconds": 738.5600000022432,
+      "covered_seconds": 651.3000000009772,
+      "excluded_startup_seconds": 63.36,
+      "sensitivity": 0.703125,
+      "precision": 0.5769230769230769,
+      "false_alarms_per_hour": 61.559507523939814,
+      "coverage": 0.8818511698426655,
+      "missed_events": 19,
+      "median_delay_s": 1.180000000025757,
+      "p90_delay_s": 3.180000000040491
+    },
+    "groups": {
+      "dataset:fogstar": {
+        "window": {
+          "n": 9668,
+          "accuracy": 0.7421390153082333,
+          "precision": 0.6106711915535445,
+          "recall": 0.8832833378783747,
+          "specificity": 0.6558906848858523,
+          "f1": 0.7221045591349905,
+          "pr_auc": 0.6025102329291148,
+          "roc_auc": 0.7921018935713241,
+          "confusion_matrix": [
+            [
+              3936,
+              2065
+            ],
+            [
+              428,
+              3239
+            ]
+          ]
+        },
+        "event": {
+          "events": 64,
+          "predicted_events": 78,
+          "matched": 45,
+          "false_events": 33,
+          "valid_seconds": 1929.84,
+          "fog_seconds": 738.5600000022432,
+          "covered_seconds": 651.3000000009772,
+          "excluded_startup_seconds": 63.36,
+          "sensitivity": 0.703125,
+          "precision": 0.5769230769230769,
+          "false_alarms_per_hour": 61.559507523939814,
+          "coverage": 0.8818511698426655,
+          "missed_events": 19,
+          "median_delay_s": 1.180000000025757,
+          "p90_delay_s": 3.180000000040491
+        }
+      },
+      "participant:fogstar:2": {
+        "window": {
+          "n": 5588,
+          "accuracy": 0.7136721546170365,
+          "precision": 0.6670616113744076,
+          "recall": 0.9352159468438538,
+          "specificity": 0.45500387897595035,
+          "f1": 0.7786998616874136,
+          "pr_auc": 0.6783935368380527,
+          "roc_auc": 0.7186422810955981,
+          "confusion_matrix": [
+            [
+              1173,
+              1405
+            ],
+            [
+              195,
+              2815
+            ]
+          ]
+        },
+        "event": {
+          "events": 26,
+          "predicted_events": 25,
+          "matched": 19,
+          "false_events": 6,
+          "valid_seconds": 1116.6,
+          "fog_seconds": 604.2399999994504,
+          "covered_seconds": 581.4999999994714,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.7307692307692307,
+          "precision": 0.76,
+          "false_alarms_per_hour": 19.344438473938744,
+          "coverage": 0.9623659473057067,
+          "missed_events": 7,
+          "median_delay_s": 0.7599999999993088,
+          "p90_delay_s": 2.363999999997849
+        }
+      },
+      "side:L": {
+        "window": {
+          "n": 4685,
+          "accuracy": 0.7485592315901815,
+          "precision": 0.61033185083818,
+          "recall": 0.9786066922654965,
+          "specificity": 0.6020265548567435,
+          "f1": 0.7517909818794775,
+          "pr_auc": 0.635175713913487,
+          "roc_auc": 0.819873631173686,
+          "confusion_matrix": [
+            [
+              1723,
+              1139
+            ],
+            [
+              39,
+              1784
+            ]
+          ]
+        },
+        "event": {
+          "events": 30,
+          "predicted_events": 39,
+          "matched": 23,
+          "false_events": 16,
+          "valid_seconds": 935.22,
+          "fog_seconds": 366.82000000112384,
+          "covered_seconds": 348.56000000077347,
+          "excluded_startup_seconds": 29.7,
+          "sensitivity": 0.7666666666666667,
+          "precision": 0.5897435897435898,
+          "false_alarms_per_hour": 61.58978636042856,
+          "coverage": 0.9502208167485567,
+          "missed_events": 7,
+          "median_delay_s": 0.7800000000170257,
+          "p90_delay_s": 1.8000000000392904
+        }
+      },
+      "side:R": {
+        "window": {
+          "n": 4983,
+          "accuracy": 0.7361027493477824,
+          "precision": 0.6110877782444352,
+          "recall": 0.7890455531453362,
+          "specificity": 0.7050015928639695,
+          "f1": 0.6887573964497041,
+          "pr_auc": 0.6134794424523748,
+          "roc_auc": 0.7868300555809322,
+          "confusion_matrix": [
+            [
+              2213,
+              926
+            ],
+            [
+              389,
+              1455
+            ]
+          ]
+        },
+        "event": {
+          "events": 34,
+          "predicted_events": 39,
+          "matched": 22,
+          "false_events": 17,
+          "valid_seconds": 994.62,
+          "fog_seconds": 371.74000000111937,
+          "covered_seconds": 302.74000000020374,
+          "excluded_startup_seconds": 33.66,
+          "sensitivity": 0.6470588235294118,
+          "precision": 0.5641025641025641,
+          "false_alarms_per_hour": 61.53103697894673,
+          "coverage": 0.8143863990942383,
+          "missed_events": 12,
+          "median_delay_s": 1.620000000017626,
+          "p90_delay_s": 3.84000000008382
+        }
+      },
+      "participant:fogstar:17": {
+        "window": {
+          "n": 436,
+          "accuracy": 0.9541284403669725,
+          "precision": 0.5238095238095238,
+          "recall": 0.5238095238095238,
+          "specificity": 0.9759036144578314,
+          "f1": 0.5238095238095238,
+          "pr_auc": 0.455119174501982,
+          "roc_auc": 0.9461847389558233,
+          "confusion_matrix": [
+            [
+              405,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        "event": {
+          "events": 6,
+          "predicted_events": 4,
+          "matched": 2,
+          "false_events": 2,
+          "valid_seconds": 86.88,
+          "fog_seconds": 6.119999999994434,
+          "covered_seconds": 0.5799999999994725,
+          "excluded_startup_seconds": 7.92,
+          "sensitivity": 0.3333333333333333,
+          "precision": 0.5,
+          "false_alarms_per_hour": 82.87292817679558,
+          "coverage": 0.09477124183006536,
+          "missed_events": 4,
+          "median_delay_s": 1.2099999999988995,
+          "p90_delay_s": 1.4899999999986449
+        }
+      },
+      "participant:fogstar:20": {
+        "window": {
+          "n": 1956,
+          "accuracy": 0.7044989775051125,
+          "precision": 0.18807339449541285,
+          "recall": 0.7235294117647059,
+          "specificity": 0.7026875699888018,
+          "f1": 0.29854368932038833,
+          "pr_auc": 0.1527483195803963,
+          "roc_auc": 0.7562413543244846,
+          "confusion_matrix": [
+            [
+              1255,
+              531
+            ],
+            [
+              47,
+              123
+            ]
+          ]
+        },
+        "event": {
+          "events": 12,
+          "predicted_events": 28,
+          "matched": 10,
+          "false_events": 18,
+          "valid_seconds": 389.8,
+          "fog_seconds": 34.40000000075088,
+          "covered_seconds": 19.360000000422588,
+          "excluded_startup_seconds": 19.8,
+          "sensitivity": 0.8333333333333334,
+          "precision": 0.35714285714285715,
+          "false_alarms_per_hour": 166.23909697280655,
+          "coverage": 0.5627906976744186,
+          "missed_events": 2,
+          "median_delay_s": 1.0300000000224827,
+          "p90_delay_s": 2.080000000045401
+        }
+      },
+      "participant:fogstar:21": {
+        "window": {
+          "n": 1688,
+          "accuracy": 0.8252369668246445,
+          "precision": 0.7090464547677262,
+          "recall": 0.6223175965665236,
+          "specificity": 0.9026186579378068,
+          "f1": 0.6628571428571428,
+          "pr_auc": 0.7155081880527775,
+          "roc_auc": 0.8663469440795712,
+          "confusion_matrix": [
+            [
+              1103,
+              119
+            ],
+            [
+              176,
+              290
+            ]
+          ]
+        },
+        "event": {
+          "events": 20,
+          "predicted_events": 21,
+          "matched": 14,
+          "false_events": 7,
+          "valid_seconds": 336.56,
+          "fog_seconds": 93.80000000204745,
+          "covered_seconds": 49.86000000108379,
+          "excluded_startup_seconds": 19.8,
+          "sensitivity": 0.7,
+          "precision": 0.6666666666666666,
+          "false_alarms_per_hour": 74.87520798668885,
+          "coverage": 0.5315565031982458,
+          "missed_events": 6,
+          "median_delay_s": 1.4800000000323053,
+          "p90_delay_s": 3.390000000073997
+        }
+      }
+    }
+  }
+}

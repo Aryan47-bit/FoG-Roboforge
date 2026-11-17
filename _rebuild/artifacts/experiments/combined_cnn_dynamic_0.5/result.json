@@ -1,0 +1,1050 @@
+{
+  "name": "combined_cnn_dynamic_0.5",
+  "kind": "cnn",
+  "parameters": 1669,
+  "source_sha256": {
+    "data_pipeline.py": "f6e438d04ed29b8a6ec7c570d5c9d480f055878760473027d46c8c3318ebccc1",
+    "models.py": "0e92c103f1c306e21aa688b0b001feebcd1c8f9d282f7f62e682ed6ab9f03ee3",
+    "train.py": "b47d775d80ea495ffc9e74db22ac7ababb3c87b98d34b8f86de4694f91fab32a",
+    "evaluation.py": "a229798a0ab84b96500f2bbdbd6a0e77c3e725fa6cb3a3f41ac30ea49bbaeb29"
+  },
+  "dataset_sha256": [
+    "05730742ca730272a6b646287b5ec4bb46cc92f83ac4dc65b2b2a701442f7ae3",
+    "0684b6ee03730301524f9196fe156c63653f39d9ac5f016e0ae82ba3fffbde43",
+    "08982a9238f2a6fdeed34bb1e1c4a18239bf6c29c21123c77511068a371fdaa5",
+    "26dd8bf809a60f81572c904d1d37faa79f8a0e7489df4623bce3c8b4a6cbfc52",
+    "34f5a57902feec0bd2ae63425f32418571b855cbf180903c9bafd04e6942754d",
+    "3683584039fac2072e5a47af7427b68ac63d45d5aa28156c55a24f42a3fc392b",
+    "440573d7a95a973fcab2dc7ff4e3a14c61aa37d813183f3c538cafd44b7e0f0b",
+    "4fc0c8a82e1a01820b87818fbf61ea40cc7f9ec08a214edfa778ba00a84fe753",
+    "5729938ebc77f99b913c486a13c12d14a6ebc0c230b91119e33cd23fa8aa3dcf",
+    "636d2dc154fccdbd838b498582e90fb324ba9dfec32da316cf757b2ebd367746",
+    "71b761adefae15c0bc7996fd1705bbced73f1409acabf6e03eb30c58425b204e",
+    "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+    "9d31d02e8e056ae839c291476d0a10f1ff0c92f03c70ea67ca5054805756ec63",
+    "9ebea5ebbb7922d5c7d6cd387d735bb055c8d0f747d1c2258880350ccf0b230c",
+    "c7ff5acbbe1783e25be517de3c69f64b7052fe01c7d6e3b1b8d001d830608ff2",
+    "cdbab3338b7578979c1c0015a9a9b2518393b2b5506504990e61a121dd8667aa",
+    "ce31232163db05c9e98197c9e5764aed347d8638c8a5f12809387ac8df7d80d7",
+    "db380b744d14e3143ffa771edeb4083a6b9ce5cd526e7c0c9f9d3c437e2d5d8e"
+  ],
+  "peak_cuda_memory_bytes": 28228096,
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "seed": 20261117,
+  "epochs": 20,
+  "representation": "dynamic",
+  "overlap": 0.5,
+  "normalization": {
+    "mean": [
+      -0.07872816175222397,
+      0.01786406897008419,
+      0.005554703995585442
+    ],
+    "std": [
+      3.1206390857696533,
+      2.903865098953247,
+      1.8987972736358643
+    ]
+  },
+  "sampling": "balanced with replacement, maximum 24000 windows/epoch",
+  "positive_loss_weight": 7.507050532194704,
+  "validation_selection_score": 0.39353395740054875,
+  "alarm": {
+    "high": 0.25,
+    "low": 0.05,
+    "confirm": 3,
+    "alpha": 0.6
+  },
+  "splits": {
+    "train": [
+      "daphnet:S01",
+      "daphnet:S03",
+      "daphnet:S07",
+      "daphnet:S08",
+      "daphnet:S09",
+      "daphnet:S10",
+      "fogstar:1",
+      "fogstar:10",
+      "fogstar:11",
+      "fogstar:12",
+      "fogstar:13",
+      "fogstar:14",
+      "fogstar:15",
+      "fogstar:16",
+      "fogstar:18",
+      "fogstar:22",
+      "fogstar:5",
+      "fogstar:7",
+      "fogstar:8",
+      "fogstar:9"
+    ],
+    "validation": [
+      "daphnet:S02",
+      "daphnet:S06",
+      "fogstar:17",
+      "fogstar:2",
+      "fogstar:20",
+      "fogstar:21"
+    ],
+    "test": [
+      "daphnet:S04",
+      "daphnet:S05",
+      "fogstar:19",
+      "fogstar:3",
+      "fogstar:4",
+      "fogstar:6"
+    ]
+  },
+  "validation": {
+    "window": {
+      "n": 26595,
+      "accuracy": 0.7676630945666478,
+      "precision": 0.4508205181133244,
+      "recall": 0.835820895522388,
+      "specificity": 0.750994431185362,
+      "f1": 0.5857190747569561,
+      "pr_auc": 0.6631282753880802,
+      "roc_auc": 0.8718714694793865,
+      "confusion_matrix": [
+        [
+          16048,
+          5321
+        ],
+        [
+          858,
+          4368
+        ]
+      ]
+    },
+    "event": {
+      "events": 98,
+      "predicted_events": 168,
+      "matched": 70,
+      "false_events": 98,
+      "valid_seconds": 5313.98,
+      "fog_seconds": 1051.3800000021376,
+      "covered_seconds": 964.8600000014462,
+      "excluded_startup_seconds": 77.22,
+      "sensitivity": 0.7142857142857143,
+      "precision": 0.4166666666666667,
+      "false_alarms_per_hour": 66.3909160365677,
+      "coverage": 0.9177081549958003,
+      "missed_events": 28,
+      "median_delay_s": 0.7800000000170257,
+      "p90_delay_s": 2.4080000000065183
+    },
+    "groups": {
+      "dataset:daphnet": {
+        "window": {
+          "n": 16927,
+          "accuracy": 0.8201098836178886,
+          "precision": 0.3122789287518949,
+          "recall": 0.7928159076330982,
+          "specificity": 0.8228787090057262,
+          "f1": 0.4480696030451332,
+          "pr_auc": 0.5354314355715478,
+          "roc_auc": 0.8699762324452166,
+          "confusion_matrix": [
+            [
+              12646,
+              2722
+            ],
+            [
+              323,
+              1236
+            ]
+          ]
+        },
+        "event": {
+          "events": 34,
+          "predicted_events": 95,
+          "matched": 27,
+          "false_events": 68,
+          "valid_seconds": 3384.14,
+          "fog_seconds": 312.8199999998944,
+          "covered_seconds": 268.19999999989886,
+          "excluded_startup_seconds": 13.86,
+          "sensitivity": 0.7941176470588235,
+          "precision": 0.28421052631578947,
+          "false_alarms_per_hour": 72.33743284852282,
+          "coverage": 0.857362061249247,
+          "missed_events": 7,
+          "median_delay_s": 1.2399999999988722,
+          "p90_delay_s": 3.011999999998989
+        }
+      },
+      "participant:daphnet:S02": {
+        "window": {
+          "n": 7047,
+          "accuracy": 0.821910032638002,
+          "precision": 0.40188470066518844,
+          "recall": 0.804661487236404,
+          "specificity": 0.8244386592905955,
+          "f1": 0.5360443622920518,
+          "pr_auc": 0.6220326097823237,
+          "roc_auc": 0.8808457753669224,
+          "confusion_matrix": [
+            [
+              5067,
+              1079
+            ],
+            [
+              176,
+              725
+            ]
+          ]
+        },
+        "event": {
+          "events": 24,
+          "predicted_events": 42,
+          "matched": 19,
+          "false_events": 23,
+          "valid_seconds": 1409.04,
+          "fog_seconds": 181.36000000001394,
+          "covered_seconds": 142.220000000013,
+          "excluded_startup_seconds": 3.96,
+          "sensitivity": 0.7916666666666666,
+          "precision": 0.4523809523809524,
+          "false_alarms_per_hour": 58.76341338783853,
+          "coverage": 0.7841861490957326,
+          "missed_events": 5,
+          "median_delay_s": 1.7200000000009368,
+          "p90_delay_s": 3.416000000001735
+        }
+      },
+      "side:unknown": {
+        "window": {
+          "n": 16927,
+          "accuracy": 0.8201098836178886,
+          "precision": 0.3122789287518949,
+          "recall": 0.7928159076330982,
+          "specificity": 0.8228787090057262,
+          "f1": 0.4480696030451332,
+          "pr_auc": 0.5354314355715478,
+          "roc_auc": 0.8699762324452166,
+          "confusion_matrix": [
+            [
+              12646,
+              2722
+            ],
+            [
+              323,
+              1236
+            ]
+          ]
+        },
+        "event": {
+          "events": 34,
+          "predicted_events": 95,
+          "matched": 27,
+          "false_events": 68,
+          "valid_seconds": 3384.14,
+          "fog_seconds": 312.8199999998944,
+          "covered_seconds": 268.19999999989886,
+          "excluded_startup_seconds": 13.86,
+          "sensitivity": 0.7941176470588235,
+          "precision": 0.28421052631578947,
+          "false_alarms_per_hour": 72.33743284852282,
+          "coverage": 0.857362061249247,
+          "missed_events": 7,
+          "median_delay_s": 1.2399999999988722,
+          "p90_delay_s": 3.011999999998989
+        }
+      },
+      "participant:daphnet:S06": {
+        "window": {
+          "n": 9880,
+          "accuracy": 0.8188259109311741,
+          "precision": 0.2372330547818013,
+          "recall": 0.776595744680851,
+          "specificity": 0.8218390804597702,
+          "f1": 0.3634423897581792,
+          "pr_auc": 0.409055012738122,
+          "roc_auc": 0.8603756775623773,
+          "confusion_matrix": [
+            [
+              7579,
+              1643
+            ],
+            [
+              147,
+              511
+            ]
+          ]
+        },
+        "event": {
+          "events": 10,
+          "predicted_events": 53,
+          "matched": 8,
+          "false_events": 45,
+          "valid_seconds": 1975.1,
+          "fog_seconds": 131.45999999988044,
+          "covered_seconds": 125.97999999988588,
+          "excluded_startup_seconds": 9.9,
+          "sensitivity": 0.8,
+          "precision": 0.1509433962264151,
+          "false_alarms_per_hour": 82.02116348539315,
+          "coverage": 0.9583143161417956,
+          "missed_events": 2,
+          "median_delay_s": 0.0,
+          "p90_delay_s": 0.17599999999983987
+        }
+      },
+      "dataset:fogstar": {
+        "window": {
+          "n": 9668,
+          "accuracy": 0.6758378154737278,
+          "precision": 0.5465014831617518,
+          "recall": 0.8541041723479683,
+          "specificity": 0.5669055157473755,
+          "f1": 0.6665247925090445,
+          "pr_auc": 0.7264685149281908,
+          "roc_auc": 0.816610239535116,
+          "confusion_matrix": [
+            [
+              3402,
+              2599
+            ],
+            [
+              535,
+              3132
+            ]
+          ]
+        },
+        "event": {
+          "events": 64,
+          "predicted_events": 73,
+          "matched": 43,
+          "false_events": 30,
+          "valid_seconds": 1929.84,
+          "fog_seconds": 738.5600000022432,
+          "covered_seconds": 696.6600000015474,
+          "excluded_startup_seconds": 63.36,
+          "sensitivity": 0.671875,
+          "precision": 0.589041095890411,
+          "false_alarms_per_hour": 55.9631886581271,
+          "coverage": 0.9432679809351053,
+          "missed_events": 21,
+          "median_delay_s": 0.7800000000170257,
+          "p90_delay_s": 1.7760000000307627
+        }
+      },
+      "participant:fogstar:2": {
+        "window": {
+          "n": 5588,
+          "accuracy": 0.6399427344309234,
+          "precision": 0.6225442043222004,
+          "recall": 0.8421926910299004,
+          "specificity": 0.4038013964313421,
+          "f1": 0.71589946342841,
+          "pr_auc": 0.7744548861164631,
+          "roc_auc": 0.7401020389753318,
+          "confusion_matrix": [
+            [
+              1041,
+              1537
+            ],
+            [
+              475,
+              2535
+            ]
+          ]
+        },
+        "event": {
+          "events": 26,
+          "predicted_events": 18,
+          "matched": 14,
+          "false_events": 4,
+          "valid_seconds": 1116.6,
+          "fog_seconds": 604.2399999994504,
+          "covered_seconds": 600.3999999994539,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.5384615384615384,
+          "precision": 0.7777777777777778,
+          "false_alarms_per_hour": 12.896292315959164,
+          "coverage": 0.9936449093075599,
+          "missed_events": 12,
+          "median_delay_s": 0.0,
+          "p90_delay_s": 1.0999999999989998
+        }
+      },
+      "side:L": {
+        "window": {
+          "n": 4685,
+          "accuracy": 0.6651013874066168,
+          "precision": 0.544281729428173,
+          "recall": 0.8562808557323094,
+          "specificity": 0.5433263452131377,
+          "f1": 0.6655297377957792,
+          "pr_auc": 0.7235709829977567,
+          "roc_auc": 0.8058659576580482,
+          "confusion_matrix": [
+            [
+              1555,
+              1307
+            ],
+            [
+              262,
+              1561
+            ]
+          ]
+        },
+        "event": {
+          "events": 30,
+          "predicted_events": 38,
+          "matched": 22,
+          "false_events": 16,
+          "valid_seconds": 935.22,
+          "fog_seconds": 366.82000000112384,
+          "covered_seconds": 350.2200000008188,
+          "excluded_startup_seconds": 29.7,
+          "sensitivity": 0.7333333333333333,
+          "precision": 0.5789473684210527,
+          "false_alarms_per_hour": 61.58978636042856,
+          "coverage": 0.9547461970441792,
+          "missed_events": 8,
+          "median_delay_s": 0.6300000000137516,
+          "p90_delay_s": 1.44800000002897
+        }
+      },
+      "side:R": {
+        "window": {
+          "n": 4983,
+          "accuracy": 0.685932169375878,
+          "precision": 0.5487251135172896,
+          "recall": 0.8519522776572668,
+          "specificity": 0.5884039503026441,
+          "f1": 0.6675164648396006,
+          "pr_auc": 0.7353016819025316,
+          "roc_auc": 0.8269192628736923,
+          "confusion_matrix": [
+            [
+              1847,
+              1292
+            ],
+            [
+              273,
+              1571
+            ]
+          ]
+        },
+        "event": {
+          "events": 34,
+          "predicted_events": 35,
+          "matched": 21,
+          "false_events": 14,
+          "valid_seconds": 994.62,
+          "fog_seconds": 371.74000000111937,
+          "covered_seconds": 346.44000000072856,
+          "excluded_startup_seconds": 33.66,
+          "sensitivity": 0.6176470588235294,
+          "precision": 0.6,
+          "false_alarms_per_hour": 50.67261868854437,
+          "coverage": 0.9319416796677392,
+          "missed_events": 13,
+          "median_delay_s": 1.080000000023574,
+          "p90_delay_s": 1.7800000000388536
+        }
+      },
+      "participant:fogstar:17": {
+        "window": {
+          "n": 436,
+          "accuracy": 0.9426605504587156,
+          "precision": 0.4090909090909091,
+          "recall": 0.42857142857142855,
+          "specificity": 0.9686746987951808,
+          "f1": 0.4186046511627907,
+          "pr_auc": 0.6247174077323916,
+          "roc_auc": 0.9529546758462422,
+          "confusion_matrix": [
+            [
+              402,
+              13
+            ],
+            [
+              12,
+              9
+            ]
+          ]
+        },
+        "event": {
+          "events": 6,
+          "predicted_events": 4,
+          "matched": 1,
+          "false_events": 3,
+          "valid_seconds": 86.88,
+          "fog_seconds": 6.119999999994434,
+          "covered_seconds": 0.13999999999987267,
+          "excluded_startup_seconds": 7.92,
+          "sensitivity": 0.16666666666666666,
+          "precision": 0.25,
+          "false_alarms_per_hour": 124.30939226519338,
+          "coverage": 0.02287581699346405,
+          "missed_events": 5,
+          "median_delay_s": 1.7599999999983993,
+          "p90_delay_s": 1.7599999999983993
+        }
+      },
+      "participant:fogstar:20": {
+        "window": {
+          "n": 1956,
+          "accuracy": 0.7137014314928425,
+          "precision": 0.2018348623853211,
+          "recall": 0.7764705882352941,
+          "specificity": 0.7077267637178052,
+          "f1": 0.32038834951456313,
+          "pr_auc": 0.19099860762366436,
+          "roc_auc": 0.8041202819313615,
+          "confusion_matrix": [
+            [
+              1264,
+              522
+            ],
+            [
+              38,
+              132
+            ]
+          ]
+        },
+        "event": {
+          "events": 12,
+          "predicted_events": 29,
+          "matched": 9,
+          "false_events": 20,
+          "valid_seconds": 389.8,
+          "fog_seconds": 34.40000000075088,
+          "covered_seconds": 19.320000000417167,
+          "excluded_startup_seconds": 19.8,
+          "sensitivity": 0.75,
+          "precision": 0.3103448275862069,
+          "false_alarms_per_hour": 184.71010774756286,
+          "coverage": 0.561627906976612,
+          "missed_events": 3,
+          "median_delay_s": 1.080000000023574,
+          "p90_delay_s": 2.0000000000436557
+        }
+      },
+      "participant:fogstar:21": {
+        "window": {
+          "n": 1688,
+          "accuracy": 0.681872037914692,
+          "precision": 0.46388606307222785,
+          "recall": 0.9785407725321889,
+          "specificity": 0.5687397708674304,
+          "f1": 0.629399585921325,
+          "pr_auc": 0.8644747708802625,
+          "roc_auc": 0.9324139699219601,
+          "confusion_matrix": [
+            [
+              695,
+              527
+            ],
+            [
+              10,
+              456
+            ]
+          ]
+        },
+        "event": {
+          "events": 20,
+          "predicted_events": 22,
+          "matched": 19,
+          "false_events": 3,
+          "valid_seconds": 336.56,
+          "fog_seconds": 93.80000000204745,
+          "covered_seconds": 76.80000000167638,
+          "excluded_startup_seconds": 19.8,
+          "sensitivity": 0.95,
+          "precision": 0.8636363636363636,
+          "false_alarms_per_hour": 32.08937485143808,
+          "coverage": 0.8187633262260128,
+          "missed_events": 1,
+          "median_delay_s": 0.8800000000192085,
+          "p90_delay_s": 1.7000000000371074
+        }
+      }
+    }
+  },
+  "test": {
+    "window": {
+      "n": 31861,
+      "accuracy": 0.7775336618436333,
+      "precision": 0.3946364001607071,
+      "recall": 0.787374749498998,
+      "specificity": 0.7757061516132634,
+      "f1": 0.5257594005084972,
+      "pr_auc": 0.6135087809371474,
+      "roc_auc": 0.8203635696087945,
+      "confusion_matrix": [
+        [
+          20844,
+          6027
+        ],
+        [
+          1061,
+          3929
+        ]
+      ]
+    },
+    "event": {
+      "events": 102,
+      "predicted_events": 240,
+      "matched": 91,
+      "false_events": 149,
+      "valid_seconds": 6366.48,
+      "fog_seconds": 1001.040000006612,
+      "covered_seconds": 835.7000000065775,
+      "excluded_startup_seconds": 83.16,
+      "sensitivity": 0.8921568627450981,
+      "precision": 0.37916666666666665,
+      "false_alarms_per_hour": 84.25377916839447,
+      "coverage": 0.8348317749551043,
+      "missed_events": 11,
+      "median_delay_s": 0.5599999999994907,
+      "p90_delay_s": 2.31999999999789
+    },
+    "groups": {
+      "dataset:daphnet": {
+        "window": {
+          "n": 20688,
+          "accuracy": 0.8168020108275329,
+          "precision": 0.33618695048588615,
+          "recall": 0.6120471777590565,
+          "specificity": 0.8433438899202795,
+          "f1": 0.4339904420549582,
+          "pr_auc": 0.4164887992637421,
+          "roc_auc": 0.7160147852325054,
+          "confusion_matrix": [
+            [
+              15445,
+              2869
+            ],
+            [
+              921,
+              1453
+            ]
+          ]
+        },
+        "event": {
+          "events": 66,
+          "predicted_events": 158,
+          "matched": 61,
+          "false_events": 97,
+          "valid_seconds": 4136.16,
+          "fog_seconds": 474.59999999956835,
+          "covered_seconds": 346.3399999996935,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.9242424242424242,
+          "precision": 0.3860759493670886,
+          "false_alarms_per_hour": 84.426134385517,
+          "coverage": 0.7297513695743962,
+          "missed_events": 5,
+          "median_delay_s": 0.05999999999994543,
+          "p90_delay_s": 1.899999999998272
+        }
+      },
+      "participant:daphnet:S04": {
+        "window": {
+          "n": 10322,
+          "accuracy": 0.8592327068397597,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 0.8592327068397597,
+          "f1": 0.0,
+          "pr_auc": null,
+          "roc_auc": null,
+          "confusion_matrix": [
+            [
+              8869,
+              1453
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "event": {
+          "events": 0,
+          "predicted_events": 53,
+          "matched": 0,
+          "false_events": 53,
+          "valid_seconds": 2064.04,
+          "fog_seconds": 0,
+          "covered_seconds": 0.0,
+          "excluded_startup_seconds": 3.96,
+          "sensitivity": 0.0,
+          "precision": 0.0,
+          "false_alarms_per_hour": 92.44006899091103,
+          "coverage": 0.0,
+          "missed_events": 0,
+          "median_delay_s": null,
+          "p90_delay_s": null
+        }
+      },
+      "side:unknown": {
+        "window": {
+          "n": 20688,
+          "accuracy": 0.8168020108275329,
+          "precision": 0.33618695048588615,
+          "recall": 0.6120471777590565,
+          "specificity": 0.8433438899202795,
+          "f1": 0.4339904420549582,
+          "pr_auc": 0.4164887992637421,
+          "roc_auc": 0.7160147852325054,
+          "confusion_matrix": [
+            [
+              15445,
+              2869
+            ],
+            [
+              921,
+              1453
+            ]
+          ]
+        },
+        "event": {
+          "events": 66,
+          "predicted_events": 158,
+          "matched": 61,
+          "false_events": 97,
+          "valid_seconds": 4136.16,
+          "fog_seconds": 474.59999999956835,
+          "covered_seconds": 346.3399999996935,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.9242424242424242,
+          "precision": 0.3860759493670886,
+          "false_alarms_per_hour": 84.426134385517,
+          "coverage": 0.7297513695743962,
+          "missed_events": 5,
+          "median_delay_s": 0.05999999999994543,
+          "p90_delay_s": 1.899999999998272
+        }
+      },
+      "participant:daphnet:S05": {
+        "window": {
+          "n": 10366,
+          "accuracy": 0.7745514180976268,
+          "precision": 0.50644823980481,
+          "recall": 0.6120471777590565,
+          "specificity": 0.8228228228228228,
+          "f1": 0.5542628266259775,
+          "pr_auc": 0.5075361795312702,
+          "roc_auc": 0.7214357892011641,
+          "confusion_matrix": [
+            [
+              6576,
+              1416
+            ],
+            [
+              921,
+              1453
+            ]
+          ]
+        },
+        "event": {
+          "events": 66,
+          "predicted_events": 105,
+          "matched": 61,
+          "false_events": 44,
+          "valid_seconds": 2072.12,
+          "fog_seconds": 474.59999999956835,
+          "covered_seconds": 346.3399999996935,
+          "excluded_startup_seconds": 11.879999999999999,
+          "sensitivity": 0.9242424242424242,
+          "precision": 0.580952380952381,
+          "false_alarms_per_hour": 76.44344922108759,
+          "coverage": 0.7297513695743962,
+          "missed_events": 5,
+          "median_delay_s": 0.05999999999994543,
+          "p90_delay_s": 1.899999999998272
+        }
+      },
+      "dataset:fogstar": {
+        "window": {
+          "n": 11173,
+          "accuracy": 0.7048241295981383,
+          "precision": 0.4394746183883564,
+          "recall": 0.9464831804281345,
+          "specificity": 0.6309454247984106,
+          "f1": 0.6002424242424242,
+          "pr_auc": 0.7837994846902829,
+          "roc_auc": 0.9066146061721738,
+          "confusion_matrix": [
+            [
+              5399,
+              3158
+            ],
+            [
+              140,
+              2476
+            ]
+          ]
+        },
+        "event": {
+          "events": 36,
+          "predicted_events": 82,
+          "matched": 30,
+          "false_events": 52,
+          "valid_seconds": 2230.32,
+          "fog_seconds": 526.4400000070436,
+          "covered_seconds": 489.3600000068841,
+          "excluded_startup_seconds": 67.32,
+          "sensitivity": 0.8333333333333334,
+          "precision": 0.36585365853658536,
+          "false_alarms_per_hour": 83.93414397933928,
+          "coverage": 0.9295646227496706,
+          "missed_events": 6,
+          "median_delay_s": 1.170000000012351,
+          "p90_delay_s": 2.5239999999977045
+        }
+      },
+      "participant:fogstar:3": {
+        "window": {
+          "n": 3264,
+          "accuracy": 0.7120098039215687,
+          "precision": 0.47796817625459,
+          "recall": 0.8997695852534562,
+          "specificity": 0.6439899833055092,
+          "f1": 0.6243005595523581,
+          "pr_auc": 0.7030116596554196,
+          "roc_auc": 0.8638831616442151,
+          "confusion_matrix": [
+            [
+              1543,
+              853
+            ],
+            [
+              87,
+              781
+            ]
+          ]
+        },
+        "event": {
+          "events": 14,
+          "predicted_events": 25,
+          "matched": 13,
+          "false_events": 12,
+          "valid_seconds": 651.8,
+          "fog_seconds": 174.19999999984157,
+          "covered_seconds": 154.59999999985985,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.9285714285714286,
+          "precision": 0.52,
+          "false_alarms_per_hour": 66.27799938631483,
+          "coverage": 0.8874856486796812,
+          "missed_events": 1,
+          "median_delay_s": 1.5599999999985812,
+          "p90_delay_s": 2.1519999999980426
+        }
+      },
+      "side:L": {
+        "window": {
+          "n": 5613,
+          "accuracy": 0.6998040263673615,
+          "precision": 0.4350224060668735,
+          "recall": 0.9648318042813455,
+          "specificity": 0.6192799070847851,
+          "f1": 0.5996673794250416,
+          "pr_auc": 0.7884078394412549,
+          "roc_auc": 0.9096561142544584,
+          "confusion_matrix": [
+            [
+              2666,
+              1639
+            ],
+            [
+              46,
+              1262
+            ]
+          ]
+        },
+        "event": {
+          "events": 18,
+          "predicted_events": 37,
+          "matched": 15,
+          "false_events": 22,
+          "valid_seconds": 1120.42,
+          "fog_seconds": 263.2200000035218,
+          "covered_seconds": 248.9400000035082,
+          "excluded_startup_seconds": 33.66,
+          "sensitivity": 0.8333333333333334,
+          "precision": 0.40540540540540543,
+          "false_alarms_per_hour": 70.6877777976116,
+          "coverage": 0.9457488032830995,
+          "missed_events": 3,
+          "median_delay_s": 1.159999999998945,
+          "p90_delay_s": 1.9759999999982027
+        }
+      },
+      "side:R": {
+        "window": {
+          "n": 5560,
+          "accuracy": 0.7098920863309353,
+          "precision": 0.4442005122575924,
+          "recall": 0.9281345565749235,
+          "specificity": 0.6427563499529633,
+          "f1": 0.6008413758970552,
+          "pr_auc": 0.7843714788430498,
+          "roc_auc": 0.90434560746373,
+          "confusion_matrix": [
+            [
+              2733,
+              1519
+            ],
+            [
+              94,
+              1214
+            ]
+          ]
+        },
+        "event": {
+          "events": 18,
+          "predicted_events": 45,
+          "matched": 15,
+          "false_events": 30,
+          "valid_seconds": 1109.9,
+          "fog_seconds": 263.2200000035218,
+          "covered_seconds": 240.4200000033759,
+          "excluded_startup_seconds": 33.66,
+          "sensitivity": 0.8333333333333334,
+          "precision": 0.3333333333333333,
+          "false_alarms_per_hour": 97.30606360933416,
+          "coverage": 0.9133804422162417,
+          "missed_events": 3,
+          "median_delay_s": 1.7599999999983993,
+          "p90_delay_s": 2.7520000000367872
+        }
+      },
+      "participant:fogstar:4": {
+        "window": {
+          "n": 3086,
+          "accuracy": 0.651652624756967,
+          "precision": 0.08124459809853068,
+          "recall": 0.8867924528301887,
+          "specificity": 0.6432885906040269,
+          "f1": 0.14885193982581155,
+          "pr_auc": 0.15775773899277806,
+          "roc_auc": 0.8492813726731671,
+          "confusion_matrix": [
+            [
+              1917,
+              1063
+            ],
+            [
+              12,
+              94
+            ]
+          ]
+        },
+        "event": {
+          "events": 4,
+          "predicted_events": 27,
+          "matched": 4,
+          "false_events": 23,
+          "valid_seconds": 615.76,
+          "fog_seconds": 21.399999999980537,
+          "covered_seconds": 12.439999999988686,
+          "excluded_startup_seconds": 19.8,
+          "sensitivity": 1.0,
+          "precision": 0.14814814814814814,
+          "false_alarms_per_hour": 134.46797453553333,
+          "coverage": 0.5813084112149532,
+          "missed_events": 0,
+          "median_delay_s": 2.31999999999789,
+          "p90_delay_s": 2.4879999999977374
+        }
+      },
+      "participant:fogstar:6": {
+        "window": {
+          "n": 1283,
+          "accuracy": 0.7334372564302416,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 0.7334372564302416,
+          "f1": 0.0,
+          "pr_auc": null,
+          "roc_auc": null,
+          "confusion_matrix": [
+            [
+              941,
+              342
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "event": {
+          "events": 0,
+          "predicted_events": 15,
+          "matched": 0,
+          "false_events": 15,
+          "valid_seconds": 255.72,
+          "fog_seconds": 0,
+          "covered_seconds": 0.0,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.0,
+          "precision": 0.0,
+          "false_alarms_per_hour": 211.16846550915062,
+          "coverage": 0.0,
+          "missed_events": 0,
+          "median_delay_s": null,
+          "p90_delay_s": null
+        }
+      },
+      "participant:fogstar:19": {
+        "window": {
+          "n": 3540,
+          "accuracy": 0.734180790960452,
+          "precision": 0.6401439424230307,
+          "recall": 0.9750304506699148,
+          "specificity": 0.5258166491043204,
+          "f1": 0.7728699010378952,
+          "pr_auc": 0.907503473708728,
+          "roc_auc": 0.9168363005355981,
+          "confusion_matrix": [
+            [
+              998,
+              900
+            ],
+            [
+              41,
+              1601
+            ]
+          ]
+        },
+        "event": {
+          "events": 18,
+          "predicted_events": 15,
+          "matched": 13,
+          "false_events": 2,
+          "valid_seconds": 707.04,
+          "fog_seconds": 330.84000000722153,
+          "covered_seconds": 322.32000000703556,
+          "excluded_startup_seconds": 15.84,
+          "sensitivity": 0.7222222222222222,
+          "precision": 0.8666666666666667,
+          "false_alarms_per_hour": 10.183299389002038,
+          "coverage": 0.9742473703300689,
+          "missed_events": 5,
+          "median_delay_s": 0.0,
+          "p90_delay_s": 2.540000000055444
+        }
+      }
+    },
+    "participant_bootstrap_95_percent_interval": {
+      "sensitivity": [
+        0.75,
+        0.9444444444444444
+      ],
+      "false_alarms_per_hour": [
+        57.5361348902718,
+        111.73864833836699
+      ],
+      "method": "1000 participant resamples; both sides kept together; resamples without positive events omitted",
+      "participants": 6
+    }
+  }
+}

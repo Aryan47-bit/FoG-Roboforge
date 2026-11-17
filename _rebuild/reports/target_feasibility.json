@@ -1,0 +1,2216 @@
+{
+  "split": "validation only",
+  "configurations": [
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 240,
+        "matched": 79,
+        "false_events": 161,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 732.7200000013734,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.8061224489795918,
+        "precision": 0.32916666666666666,
+        "false_alarms_per_hour": 109.07079063150408,
+        "coverage": 0.6969126291159082,
+        "missed_events": 19,
+        "median_delay_s": 1.059999999999036,
+        "p90_delay_s": 2.3599999999978536
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 226,
+        "matched": 75,
+        "false_events": 151,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 694.6600000011948,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7653061224489796,
+        "precision": 0.33185840707964603,
+        "false_alarms_per_hour": 102.29620736246656,
+        "coverage": 0.6607125872660526,
+        "missed_events": 23,
+        "median_delay_s": 1.3800000000301225,
+        "p90_delay_s": 2.7280000000218942
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 299,
+        "matched": 87,
+        "false_events": 212,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 736.8800000015084,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.8877551020408163,
+        "precision": 0.2909698996655518,
+        "false_alarms_per_hour": 143.62116530359543,
+        "coverage": 0.7008693336377049,
+        "missed_events": 11,
+        "median_delay_s": 0.8799999999991996,
+        "p90_delay_s": 1.9800000000432192
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 267,
+        "matched": 79,
+        "false_events": 188,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 691.1200000013165,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.8061224489795918,
+        "precision": 0.2958801498127341,
+        "false_alarms_per_hour": 127.36216545790539,
+        "coverage": 0.6573455838991719,
+        "missed_events": 19,
+        "median_delay_s": 1.259999999998854,
+        "p90_delay_s": 2.4960000000428413
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 195,
+        "matched": 73,
+        "false_events": 122,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 594.1800000012074,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7448979591836735,
+        "precision": 0.37435897435897436,
+        "false_alarms_per_hour": 82.64991588225774,
+        "coverage": 0.5651429549734628,
+        "missed_events": 25,
+        "median_delay_s": 1.4800000000323053,
+        "p90_delay_s": 2.9440000000104187
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 187,
+        "matched": 68,
+        "false_events": 119,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 553.840000001059,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6938775510204082,
+        "precision": 0.36363636363636365,
+        "false_alarms_per_hour": 80.61754090154649,
+        "coverage": 0.5267743346838755,
+        "missed_events": 30,
+        "median_delay_s": 1.8800000000410364,
+        "p90_delay_s": 3.3899999999983836
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 249,
+        "matched": 76,
+        "false_events": 173,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 614.4000000013731,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7755102040816326,
+        "precision": 0.30522088353413657,
+        "false_alarms_per_hour": 117.20029055434911,
+        "coverage": 0.5843748216630751,
+        "missed_events": 22,
+        "median_delay_s": 1.1000000000112777,
+        "p90_delay_s": 2.3200000000238106
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 224,
+        "matched": 72,
+        "false_events": 152,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 567.7000000012026,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7346938775510204,
+        "precision": 0.32142857142857145,
+        "false_alarms_per_hour": 102.9736656893703,
+        "coverage": 0.5399570088836085,
+        "missed_events": 26,
+        "median_delay_s": 1.5000000000154614,
+        "p90_delay_s": 2.7520000000035907
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 157,
+        "matched": 65,
+        "false_events": 92,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 496.8800000010735,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6632653061224489,
+        "precision": 0.4140127388535032,
+        "false_alarms_per_hour": 62.32616607514519,
+        "coverage": 0.47259791892566266,
+        "missed_events": 33,
+        "median_delay_s": 1.779999999998381,
+        "p90_delay_s": 5.152000000002613
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 144,
+        "matched": 58,
+        "false_events": 86,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 454.90000000092357,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5918367346938775,
+        "precision": 0.4027777777777778,
+        "false_alarms_per_hour": 58.261416113722674,
+        "coverage": 0.43266944396887774,
+        "missed_events": 40,
+        "median_delay_s": 2.1599999999980355,
+        "p90_delay_s": 5.7680000000003275
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 214,
+        "matched": 71,
+        "false_events": 143,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 533.0600000012856,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7244897959183674,
+        "precision": 0.3317757009345794,
+        "false_alarms_per_hour": 96.87654074723655,
+        "coverage": 0.5070098346936425,
+        "missed_events": 27,
+        "median_delay_s": 1.3199999999987995,
+        "p90_delay_s": 2.8800000000628643
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 183,
+        "matched": 67,
+        "false_events": 116,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 482.26000000112606,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6836734693877551,
+        "precision": 0.366120218579235,
+        "false_alarms_per_hour": 78.58516592083524,
+        "coverage": 0.458692385246196,
+        "missed_events": 31,
+        "median_delay_s": 1.6800000000366708,
+        "p90_delay_s": 3.5799999999996768
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 95,
+        "matched": 46,
+        "false_events": 49,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 347.7800000009499,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.46938775510204084,
+        "precision": 0.4842105263157895,
+        "false_alarms_per_hour": 33.19545801828385,
+        "coverage": 0.3307843025359459,
+        "missed_events": 52,
+        "median_delay_s": 2.53999999999769,
+        "p90_delay_s": 8.869999999991933
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 85,
+        "matched": 42,
+        "false_events": 43,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 317.900000000881,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.42857142857142855,
+        "precision": 0.49411764705882355,
+        "false_alarms_per_hour": 29.130708056861337,
+        "coverage": 0.3023645114042826,
+        "missed_events": 56,
+        "median_delay_s": 2.939999999997326,
+        "p90_delay_s": 9.341999999991502
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 136,
+        "matched": 58,
+        "false_events": 78,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 406.5800000011377,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5918367346938775,
+        "precision": 0.4264705882352941,
+        "false_alarms_per_hour": 52.84174949849266,
+        "coverage": 0.3867107991404735,
+        "missed_events": 40,
+        "median_delay_s": 1.689999999998463,
+        "p90_delay_s": 6.20599999999436
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 118,
+        "matched": 52,
+        "false_events": 66,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 359.18000000102984,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5306122448979592,
+        "precision": 0.4406779661016949,
+        "false_alarms_per_hour": 44.71224957564763,
+        "coverage": 0.3416271947348243,
+        "missed_events": 46,
+        "median_delay_s": 2.089999999998099,
+        "p90_delay_s": 8.699999999992084
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 47,
+        "matched": 34,
+        "false_events": 13,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 213.22000000079055,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.3469387755102041,
+        "precision": 0.723404255319149,
+        "false_alarms_per_hour": 8.806958249748776,
+        "coverage": 0.20280012935414127,
+        "missed_events": 64,
+        "median_delay_s": 4.4700000000500495,
+        "p90_delay_s": 22.29999999997972
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 42,
+        "matched": 30,
+        "false_events": 12,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 189.82000000074538,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.30612244897959184,
+        "precision": 0.7142857142857143,
+        "false_alarms_per_hour": 8.129499922845024,
+        "coverage": 0.1805436664197145,
+        "missed_events": 68,
+        "median_delay_s": 4.599999999995816,
+        "p90_delay_s": 23.415999999978705
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 78,
+        "matched": 45,
+        "false_events": 33,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 263.60000000103884,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.45918367346938777,
+        "precision": 0.5769230769230769,
+        "false_alarms_per_hour": 22.356124787823816,
+        "coverage": 0.2507181038259268,
+        "missed_events": 53,
+        "median_delay_s": 2.520000000001346,
+        "p90_delay_s": 18.59999999998309
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 62,
+        "matched": 39,
+        "false_events": 23,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 227.16000000095818,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.3979591836734694,
+        "precision": 0.6290322580645161,
+        "false_alarms_per_hour": 15.581541518786297,
+        "coverage": 0.2160588940254678,
+        "missed_events": 59,
+        "median_delay_s": 3.139999999997144,
+        "p90_delay_s": 20.839999999981046
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 10,
+        "matched": 10,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 69.6600000005742,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.10204081632653061,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.06625577812059633,
+        "missed_events": 88,
+        "median_delay_s": 5.39999999999884,
+        "p90_delay_s": 18.704000000189232
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 9,
+        "matched": 9,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 55.86000000045806,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.09183673469387756,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.05313017177456722,
+        "missed_events": 89,
+        "median_delay_s": 5.939999999994598,
+        "p90_delay_s": 29.96800000019977
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 22,
+        "matched": 20,
+        "false_events": 2,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 104.7200000007171,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.20408163265306123,
+        "precision": 0.9090909090909091,
+        "false_alarms_per_hour": 1.3549166538075041,
+        "coverage": 0.09960242728652266,
+        "missed_events": 78,
+        "median_delay_s": 3.73999999999927,
+        "p90_delay_s": 13.039999999988158
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 17,
+        "matched": 16,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 81.20000000056325,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.16326530612244897,
+        "precision": 0.9411764705882353,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.07723182864463672,
+        "missed_events": 82,
+        "median_delay_s": 4.759999999999138,
+        "p90_delay_s": 18.52000000012049
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 4,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 19.96000000014351,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.04081632653061224,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.01898457265698694,
+        "missed_events": 94,
+        "median_delay_s": 8.449999999998113,
+        "p90_delay_s": 11.918000000200529
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 4,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 18.360000000134733,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.04081632653061224,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.017462763225567734,
+        "missed_events": 94,
+        "median_delay_s": 8.849999999998033,
+        "p90_delay_s": 12.318000000206531
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 7,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 32.98000000027173,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.07142857142857142,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.03136829690521474,
+        "missed_events": 91,
+        "median_delay_s": 7.7399999999929605,
+        "p90_delay_s": 14.440000000315196
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 7,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 28.780000000245195,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.07142857142857142,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.027373547147736006,
+        "missed_events": 91,
+        "median_delay_s": 8.56000000000438,
+        "p90_delay_s": 14.840000000323927
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 221,
+        "matched": 74,
+        "false_events": 147,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 670.780000001255,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7551020408163265,
+        "precision": 0.334841628959276,
+        "false_alarms_per_hour": 99.58637405485155,
+        "coverage": 0.6379995815023028,
+        "missed_events": 24,
+        "median_delay_s": 1.359999999998763,
+        "p90_delay_s": 2.573999999997659
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 204,
+        "matched": 69,
+        "false_events": 135,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 631.1200000010895,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7040816326530612,
+        "precision": 0.3382352941176471,
+        "false_alarms_per_hour": 91.45687413200653,
+        "coverage": 0.6002777302210488,
+        "missed_events": 29,
+        "median_delay_s": 1.7599999999983993,
+        "p90_delay_s": 3.0359999999981717
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 276,
+        "matched": 78,
+        "false_events": 198,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 680.5800000013876,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7959183673469388,
+        "precision": 0.2826086956521739,
+        "false_alarms_per_hour": 134.1367487269429,
+        "coverage": 0.6473206642698205,
+        "missed_events": 20,
+        "median_delay_s": 1.149999999998954,
+        "p90_delay_s": 2.365999999997848
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 246,
+        "matched": 72,
+        "false_events": 174,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 635.2400000012012,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7346938775510204,
+        "precision": 0.2926829268292683,
+        "false_alarms_per_hour": 117.87774888125286,
+        "coverage": 0.604196389507038,
+        "missed_events": 26,
+        "median_delay_s": 1.5199999999986176,
+        "p90_delay_s": 2.7779999999974736
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 171,
+        "matched": 65,
+        "false_events": 106,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 537.7800000010384,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6632653061224489,
+        "precision": 0.38011695906432746,
+        "false_alarms_per_hour": 71.81058265179772,
+        "coverage": 0.5114991725160694,
+        "missed_events": 33,
+        "median_delay_s": 1.8800000000410364,
+        "p90_delay_s": 3.4199999999998227
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 150,
+        "matched": 58,
+        "false_events": 92,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 495.5000000009187,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5918367346938775,
+        "precision": 0.38666666666666666,
+        "false_alarms_per_hour": 62.32616607514519,
+        "coverage": 0.4712853582909236,
+        "missed_events": 40,
+        "median_delay_s": 2.270000000023856,
+        "p90_delay_s": 4.4919999999979625
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 213,
+        "matched": 68,
+        "false_events": 145,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 566.4800000012126,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6938775510204082,
+        "precision": 0.3192488262910798,
+        "false_alarms_per_hour": 98.23145740104404,
+        "coverage": 0.5387966291921673,
+        "missed_events": 30,
+        "median_delay_s": 1.359999999998763,
+        "p90_delay_s": 2.565999999997666
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 193,
+        "matched": 67,
+        "false_events": 126,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 517.9200000010737,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6836734693877551,
+        "precision": 0.3471502590673575,
+        "false_alarms_per_hour": 85.35974918987276,
+        "coverage": 0.4926097129487157,
+        "missed_events": 31,
+        "median_delay_s": 1.7800000000388536,
+        "p90_delay_s": 3.0199999999989813
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 133,
+        "matched": 57,
+        "false_events": 76,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 441.28000000094465,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5816326530612245,
+        "precision": 0.42857142857142855,
+        "false_alarms_per_hour": 51.48683284468515,
+        "coverage": 0.41971504118401287,
+        "missed_events": 41,
+        "median_delay_s": 2.2800000000497676,
+        "p90_delay_s": 5.927999999994606
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 124,
+        "matched": 51,
+        "false_events": 73,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 403.8800000008578,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5204081632653061,
+        "precision": 0.4112903225806452,
+        "false_alarms_per_hour": 49.4544578639739,
+        "coverage": 0.3841427457247015,
+        "missed_events": 47,
+        "median_delay_s": 2.6800000000584987,
+        "p90_delay_s": 5.759999999994761
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 176,
+        "matched": 66,
+        "false_events": 110,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 476.84000000112275,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.673469387755102,
+        "precision": 0.375,
+        "false_alarms_per_hour": 74.52041595941273,
+        "coverage": 0.45353725579728854,
+        "missed_events": 32,
+        "median_delay_s": 1.6699999999984811,
+        "p90_delay_s": 3.7099999999966258
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 155,
+        "matched": 60,
+        "false_events": 95,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 425.6600000010023,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6122448979591837,
+        "precision": 0.3870967741935484,
+        "false_alarms_per_hour": 64.35854105585645,
+        "coverage": 0.4048583766099192,
+        "missed_events": 38,
+        "median_delay_s": 2.1700000000216733,
+        "p90_delay_s": 5.681999999994834
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 79,
+        "matched": 39,
+        "false_events": 40,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 275.14000000084576,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.3979591836734694,
+        "precision": 0.4936708860759494,
+        "false_alarms_per_hour": 27.09833307615008,
+        "coverage": 0.26169415434979393,
+        "missed_events": 59,
+        "median_delay_s": 3.359999999996944,
+        "p90_delay_s": 16.67999999998484
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 69,
+        "matched": 35,
+        "false_events": 34,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 242.48000000079077,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.35714285714285715,
+        "precision": 0.5072463768115942,
+        "false_alarms_per_hour": 23.03358311472757,
+        "coverage": 0.2306302193310675,
+        "missed_events": 63,
+        "median_delay_s": 3.7399999999965985,
+        "p90_delay_s": 18.51999999998316
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 123,
+        "matched": 53,
+        "false_events": 70,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 332.7000000009948,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5408163265306123,
+        "precision": 0.43089430894308944,
+        "false_alarms_per_hour": 47.42208288326265,
+        "coverage": 0.3164412486449413,
+        "missed_events": 45,
+        "median_delay_s": 2.1399999999980537,
+        "p90_delay_s": 8.323999999992438
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 103,
+        "matched": 45,
+        "false_events": 58,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 282.70000000090425,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.45918367346938777,
+        "precision": 0.4368932038834951,
+        "false_alarms_per_hour": 39.29258296041762,
+        "coverage": 0.26888470391326585,
+        "missed_events": 53,
+        "median_delay_s": 2.6800000000584987,
+        "p90_delay_s": 10.887999999990098
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 35,
+        "matched": 27,
+        "false_events": 8,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 137.88000000060964,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.2755102040816326,
+        "precision": 0.7714285714285715,
+        "false_alarms_per_hour": 5.419666615230017,
+        "coverage": 0.13114192775241046,
+        "missed_events": 71,
+        "median_delay_s": 6.779999999993834,
+        "p90_delay_s": 23.73599999997841
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 32,
+        "matched": 24,
+        "false_events": 8,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 119.7200000004762,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.24489795918367346,
+        "precision": 0.75,
+        "false_alarms_per_hour": 5.419666615230017,
+        "coverage": 0.11386939070577032,
+        "missed_events": 74,
+        "median_delay_s": 6.599999999997749,
+        "p90_delay_s": 24.147999999978037
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 62,
+        "matched": 33,
+        "false_events": 29,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 198.48000000080526,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.336734693877551,
+        "precision": 0.532258064516129,
+        "false_alarms_per_hour": 19.64629148020881,
+        "coverage": 0.18878045996728274,
+        "missed_events": 65,
+        "median_delay_s": 3.380000000073778,
+        "p90_delay_s": 23.04799999997904
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 44,
+        "matched": 29,
+        "false_events": 15,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 151.70000000062464,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.29591836734693877,
+        "precision": 0.6590909090909091,
+        "false_alarms_per_hour": 10.161874903556281,
+        "coverage": 0.144286556716236,
+        "missed_events": 69,
+        "median_delay_s": 3.880000000084692,
+        "p90_delay_s": 23.927999999978237
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 7,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 44.040000000380815,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.07142857142857142,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.041887804599946045,
+        "missed_events": 91,
+        "median_delay_s": 5.8600000000029695,
+        "p90_delay_s": 11.640000000254076
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 7,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 41.24000000035494,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.07142857142857142,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.039224638094952434,
+        "missed_events": 91,
+        "median_delay_s": 6.260000000003174,
+        "p90_delay_s": 12.040000000262808
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 14,
+        "matched": 13,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 76.32000000044701,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.1326530612244898,
+        "precision": 0.9285714285714286,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.07259030987872304,
+        "missed_events": 85,
+        "median_delay_s": 5.06000000000256,
+        "p90_delay_s": 82.00799999992546
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 9,
+        "matched": 8,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 44.560000000421326,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.08163265306122448,
+        "precision": 0.8888888888888888,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.04238239266519311,
+        "missed_events": 90,
+        "median_delay_s": 5.499999999999147,
+        "p90_delay_s": 11.780000000257132
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 4,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 16.360000000129048,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.04081632653061224,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.015560501436298755,
+        "missed_events": 94,
+        "median_delay_s": 9.410000000004857,
+        "p90_delay_s": 12.614000000213572
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 3,
+        "matched": 3,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 9.860000000124728,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.030612244897959183,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.00937815062118804,
+        "missed_events": 95,
+        "median_delay_s": 10.060000000005175,
+        "p90_delay_s": 13.436000000250397
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 5,
+        "matched": 5,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 21.84000000014396,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.020772698738895125,
+        "missed_events": 93,
+        "median_delay_s": 8.760000000004538,
+        "p90_delay_s": 11.39200000017313
+      }
+    },
+    {
+      "model": "v2_longtcn_dynamic_0.5",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 4,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 16.96000000013703,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.04081632653061224,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.016131179973085417,
+        "missed_events": 94,
+        "median_delay_s": 9.610000000004959,
+        "p90_delay_s": 12.454000000207522
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 193,
+        "matched": 79,
+        "false_events": 114,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 928.7000000012981,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.8061224489795918,
+        "precision": 0.40932642487046633,
+        "false_alarms_per_hour": 77.23024926702773,
+        "coverage": 0.883315261845774,
+        "missed_events": 19,
+        "median_delay_s": 0.7599999999993088,
+        "p90_delay_s": 2.0640000000010335
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 174,
+        "matched": 74,
+        "false_events": 100,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 908.6200000011004,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7551020408163265,
+        "precision": 0.42528735632183906,
+        "false_alarms_per_hour": 67.74583269037521,
+        "coverage": 0.8642165534813797,
+        "missed_events": 24,
+        "median_delay_s": 0.7800000000170257,
+        "p90_delay_s": 2.4360000000164463
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 251,
+        "matched": 81,
+        "false_events": 170,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 937.90000000138,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.826530612244898,
+        "precision": 0.32270916334661354,
+        "false_alarms_per_hour": 115.16791557363784,
+        "coverage": 0.8920656660764643,
+        "missed_events": 17,
+        "median_delay_s": 0.5599999999994907,
+        "p90_delay_s": 1.5800000000008367
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.5,
+        "low": 0.4,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 206,
+        "matched": 80,
+        "false_events": 126,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 912.9000000011567,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.8163265306122449,
+        "precision": 0.3883495145631068,
+        "false_alarms_per_hour": 85.35974918987276,
+        "coverage": 0.8682873937104574,
+        "missed_events": 18,
+        "median_delay_s": 0.9200000000091677,
+        "p90_delay_s": 2.1880000000429454
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 120,
+        "matched": 67,
+        "false_events": 53,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 705.9600000007542,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.6836734693877551,
+        "precision": 0.5583333333333333,
+        "false_alarms_per_hour": 35.90529132589886,
+        "coverage": 0.6714603663749728,
+        "missed_events": 31,
+        "median_delay_s": 2.020000000001005,
+        "p90_delay_s": 6.351999999997906
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 108,
+        "matched": 57,
+        "false_events": 51,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 666.1600000005393,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.5816326530612245,
+        "precision": 0.5277777777777778,
+        "false_alarms_per_hour": 34.55037467209135,
+        "coverage": 0.6336053567684233,
+        "missed_events": 41,
+        "median_delay_s": 2.580000000056316,
+        "p90_delay_s": 7.019999999999481
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 165,
+        "matched": 73,
+        "false_events": 92,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 748.2800000010056,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.7448979591836735,
+        "precision": 0.44242424242424244,
+        "false_alarms_per_hour": 62.32616607514519,
+        "coverage": 0.7117122258360291,
+        "missed_events": 25,
+        "median_delay_s": 1.5599999999985812,
+        "p90_delay_s": 5.072000000001297
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.7,
+        "low": 0.6,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 126,
+        "matched": 66,
+        "false_events": 60,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 696.8000000007587,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.673469387755102,
+        "precision": 0.5238095238095238,
+        "false_alarms_per_hour": 40.647499614225126,
+        "coverage": 0.6627480073801498,
+        "missed_events": 32,
+        "median_delay_s": 1.9699999999982083,
+        "p90_delay_s": 6.419999999994161
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 43,
+        "matched": 28,
+        "false_events": 15,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 130.120000000365,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.2857142857142857,
+        "precision": 0.6511627906976745,
+        "false_alarms_per_hour": 10.161874903556281,
+        "coverage": 0.1237611520098351,
+        "missed_events": 70,
+        "median_delay_s": 3.120000000032178,
+        "p90_delay_s": 10.635999999990332
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 40,
+        "matched": 24,
+        "false_events": 16,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 117.1800000003044,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.24489795918367346,
+        "precision": 0.6,
+        "false_alarms_per_hour": 10.839333230460033,
+        "coverage": 0.11145351823324218,
+        "missed_events": 74,
+        "median_delay_s": 3.4300000000364435,
+        "p90_delay_s": 14.843999999986494
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 78,
+        "matched": 44,
+        "false_events": 34,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 160.44000000063363,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.4489795918367347,
+        "precision": 0.5641025641025641,
+        "false_alarms_per_hour": 23.03358311472757,
+        "coverage": 0.15259944073532636,
+        "missed_events": 54,
+        "median_delay_s": 2.1200000000242767,
+        "p90_delay_s": 7.089999999996317
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.8,
+        "low": 0.7000000000000001,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 50,
+        "matched": 28,
+        "false_events": 22,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 125.50000000048124,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.2857142857142857,
+        "precision": 0.56,
+        "false_alarms_per_hour": 14.904083191882545,
+        "coverage": 0.11936692727674682,
+        "missed_events": 70,
+        "median_delay_s": 2.9199999999993906,
+        "p90_delay_s": 10.895999999990098
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 11,
+        "matched": 10,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 58.040000000137866,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.10204081632653061,
+        "precision": 0.9090909090909091,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.055203637124559966,
+        "missed_events": 88,
+        "median_delay_s": 3.199999999999534,
+        "p90_delay_s": 6.65000000002278
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 10,
+        "matched": 8,
+        "false_events": 2,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 53.220000000124514,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.08163265306122448,
+        "precision": 0.8,
+        "false_alarms_per_hour": 1.3549166538075041,
+        "coverage": 0.05061918621242206,
+        "missed_events": 90,
+        "median_delay_s": 3.319999999999368,
+        "p90_delay_s": 8.390000000081589
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 21,
+        "matched": 14,
+        "false_events": 7,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 66.30000000017355,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.14285714285714285,
+        "precision": 0.6666666666666666,
+        "false_alarms_per_hour": 4.742208288326264,
+        "coverage": 0.06305997831425246,
+        "missed_events": 84,
+        "median_delay_s": 2.8199999999994247,
+        "p90_delay_s": 4.192000000002146
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.9,
+        "low": 0.8,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 16,
+        "matched": 12,
+        "false_events": 4,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 58.500000000134946,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.12244897959183673,
+        "precision": 0.75,
+        "false_alarms_per_hour": 2.7098333076150083,
+        "coverage": 0.055641157336087814,
+        "missed_events": 86,
+        "median_delay_s": 3.3199999999994247,
+        "p90_delay_s": 4.784000000002448
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 6,
+        "matched": 5,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 41.659999999987804,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 0.8333333333333334,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.03962411307034859,
+        "missed_events": 93,
+        "median_delay_s": 2.53999999999769,
+        "p90_delay_s": 3.9319999999999027
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 6,
+        "matched": 5,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 39.25999999998885,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 0.8333333333333334,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.0373413989232333,
+        "missed_events": 93,
+        "median_delay_s": 2.939999999997326,
+        "p90_delay_s": 4.33199999999988
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 8,
+        "matched": 7,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 45.879999999986694,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.07142857142857142,
+        "precision": 0.875,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.04363788544569367,
+        "missed_events": 91,
+        "median_delay_s": 2.939999999997326,
+        "p90_delay_s": 4.740000000047258
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.95,
+        "low": 0.85,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 5,
+        "false_events": 2,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 42.25999999998817,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 0.7142857142857143,
+        "false_alarms_per_hour": 1.3549166538075041,
+        "coverage": 0.04019479160712801,
+        "missed_events": 93,
+        "median_delay_s": 1.9399999999982356,
+        "p90_delay_s": 3.6519999999999526
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 5,
+        "matched": 4,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 30.059999999996194,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.04081632653061224,
+        "precision": 0.8,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.028590994692627856,
+        "missed_events": 94,
+        "median_delay_s": 4.299999999999557,
+        "p90_delay_s": 5.4759999999971
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 3,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 21.260000000002833,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.030612244897959183,
+        "precision": 0.75,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.020221042819874458,
+        "missed_events": 95,
+        "median_delay_s": 5.260000000002719,
+        "p90_delay_s": 5.963999999996076
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 5,
+        "false_events": 2,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 34.05999999998966,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 0.7142857142857143,
+        "false_alarms_per_hour": 1.3549166538075041,
+        "coverage": 0.03239551827114878,
+        "missed_events": 93,
+        "median_delay_s": 2.53999999999769,
+        "p90_delay_s": 4.131999999999858
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.98,
+        "low": 0.88,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 7,
+        "matched": 5,
+        "false_events": 2,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 29.459999999992135,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.05102040816326531,
+        "precision": 0.7142857142857143,
+        "false_alarms_per_hour": 1.3549166538075041,
+        "coverage": 0.028020316155844924,
+        "missed_events": 93,
+        "median_delay_s": 3.2999999999969987,
+        "p90_delay_s": 4.531999999999835
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 1,
+        "matched": 1,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 3.2000000000014666,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.01020408163265306,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.003043618862823109,
+        "missed_events": 97,
+        "median_delay_s": 9.260000000004766,
+        "p90_delay_s": 9.260000000004766
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.3,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 1,
+        "matched": 1,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 2.800000000001262,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.01020408163265306,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.0026631665049702,
+        "missed_events": 97,
+        "median_delay_s": 9.66000000000497,
+        "p90_delay_s": 9.66000000000497
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 1
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 4,
+        "matched": 3,
+        "false_events": 1,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 10.25999999999874,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.030612244897959183,
+        "precision": 0.75,
+        "false_alarms_per_hour": 0.6774583269037521,
+        "coverage": 0.009758602978920923,
+        "missed_events": 95,
+        "median_delay_s": 8.660000000004402,
+        "p90_delay_s": 9.220000000004712
+      }
+    },
+    {
+      "model": "v2_longtcn_gravity_0.2",
+      "config": {
+        "high": 0.995,
+        "low": 0.895,
+        "alpha": 0.6,
+        "confirm": 3
+      },
+      "validation": {
+        "events": 98,
+        "predicted_events": 1,
+        "matched": 1,
+        "false_events": 0,
+        "valid_seconds": 5313.98,
+        "fog_seconds": 1051.3800000021376,
+        "covered_seconds": 3.2000000000015802,
+        "excluded_startup_seconds": 77.22,
+        "sensitivity": 0.01020408163265306,
+        "precision": 1.0,
+        "false_alarms_per_hour": 0.0,
+        "coverage": 0.003043618862823217,
+        "missed_events": 97,
+        "median_delay_s": 9.060000000004607,
+        "p90_delay_s": 9.060000000004607
+      }
+    }
+  ],
+  "best_sensitivity_under_two_false_events_per_hour": {
+    "model": "v2_longtcn_dynamic_0.2",
+    "config": {
+      "high": 0.98,
+      "low": 0.88,
+      "alpha": 0.6,
+      "confirm": 1
+    },
+    "validation": {
+      "events": 98,
+      "predicted_events": 22,
+      "matched": 20,
+      "false_events": 2,
+      "valid_seconds": 5313.98,
+      "fog_seconds": 1051.3800000021376,
+      "covered_seconds": 104.7200000007171,
+      "excluded_startup_seconds": 77.22,
+      "sensitivity": 0.20408163265306123,
+      "precision": 0.9090909090909091,
+      "false_alarms_per_hour": 1.3549166538075041,
+      "coverage": 0.09960242728652266,
+      "missed_events": 78,
+      "median_delay_s": 3.73999999999927,
+      "p90_delay_s": 13.039999999988158
+    }
+  },
+  "target_met": false
+}

@@ -1,0 +1,26 @@
+{
+  "changes": "24-channel causal residual TCN; receptive field 61 samples instead of 13 for baseline CNN",
+  "experiments": [
+    [
+      "gravity",
+      0.2
+    ],
+    [
+      "dynamic",
+      0.2
+    ],
+    [
+      "dynamic",
+      0.5
+    ]
+  ],
+  "epochs_max": 40,
+  "selection": "validation event F1 - 0.002 * false alarms/hour",
+  "engineering_target_only": {
+    "sensitivity_min": 0.9,
+    "false_events_per_hour_max": 2,
+    "median_delay_s_max": 2
+  },
+  "test_caveat": "Previously reported test set is a reused benchmark, not fresh independent certification. No thresholds are fit on it.",
+  "original_deployment_artifact": "preserved; no automatic replacement"
+}

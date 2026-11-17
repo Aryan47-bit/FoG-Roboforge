@@ -1,0 +1,25 @@
+{
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "models": {
+    "cnn": {
+      "loss": 0.708582878112793,
+      "parameter_device": "cuda:0",
+      "gradient_device": "cuda:0",
+      "weights_changed": true
+    },
+    "rescnn": {
+      "loss": 0.7158669233322144,
+      "parameter_device": "cuda:0",
+      "gradient_device": "cuda:0",
+      "weights_changed": true
+    },
+    "tcn": {
+      "loss": 0.6789237260818481,
+      "parameter_device": "cuda:0",
+      "gradient_device": "cuda:0",
+      "weights_changed": true
+    }
+  }
+}

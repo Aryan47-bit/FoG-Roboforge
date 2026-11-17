@@ -1,0 +1,31 @@
+{
+  "daphnet": "17 local recordings; actual rate ~64 Hz",
+  "fogstar": "local bilateral labelled CSV; official units g",
+  "multimodal": "Only unaligned repository samples, no verified participant/session identity. Excluded from supervised experiments; full labelled release required.",
+  "multimodal_files": [
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\Arm_Ori.csv",
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\EEG.txt",
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\EMG.txt",
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\LShank_Ori.csv",
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\RShank_Ori.csv",
+    "multimodal_parkinson\\Sample Data\\1-Raw Data\\Waist_Ori.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\Arm.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\EEG.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\EMG.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\LShank.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\RShank.csv",
+    "multimodal_parkinson\\Sample Data\\2-Preprocessed Data\\Waist.csv",
+    "multimodal_parkinson\\Sample Data\\3-Segmented Data\\task_1_data.txt",
+    "multimodal_parkinson\\Sample Data\\3-Segmented Data\\task_2_data.txt",
+    "multimodal_parkinson\\Sample Data\\3-Segmented Data\\task_3_data.txt",
+    "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_1.txt",
+    "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_2.txt",
+    "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_3.txt"
+  ],
+  "fogstar_timestamp_caveat": "Official README says milliseconds, local file step is 0.0166667; treated as seconds at documented 60 Hz.",
+  "source_urls": [
+    "https://zenodo.org/records/17838806",
+    "https://data.mendeley.com/datasets/r8gmbtv7w2/3"
+  ],
+  "bilateral_duration_caveat": "FoG-STAR per-side durations count the same observation twice; report sides separately."
+}

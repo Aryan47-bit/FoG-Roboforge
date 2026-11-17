@@ -1,0 +1,5 @@
+{
+  "experiment": "combined_cnn_gravity_0.2",
+  "criterion": "maximum validation event F1 - 0.002 * false alarms/hour",
+  "test_used_for_selection": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "recording_segments": 237,
+  "windows": 138730,
+  "participants": 32,
+  "verified_raw_source_checksums": 18,
+  "checks": [
+    "finite 3-axis input",
+    "binary valid labels",
+    "50 Hz time grid",
+    "recording-bounded windows",
+    "exact overlap labels",
+    "disjoint participants",
+    "unchanged source SHA256"
+  ]
+}

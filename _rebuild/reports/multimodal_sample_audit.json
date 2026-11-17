@@ -1,0 +1,40 @@
+[
+  {
+    "file": "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_1.txt",
+    "shape": [
+      1501,
+      61
+    ],
+    "labels": {
+      "1": 1500,
+      "0": 1
+    },
+    "duration_at_500Hz": 3.002,
+    "left_right_acc_exactly_equal": true
+  },
+  {
+    "file": "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_2.txt",
+    "shape": [
+      1001,
+      61
+    ],
+    "labels": {
+      "0": 501,
+      "1": 500
+    },
+    "duration_at_500Hz": 2.002,
+    "left_right_acc_exactly_equal": true
+  },
+  {
+    "file": "multimodal_parkinson\\Sample Data\\4-Labeled Data\\task_3.txt",
+    "shape": [
+      501,
+      61
+    ],
+    "labels": {
+      "0": 501
+    },
+    "duration_at_500Hz": 1.002,
+    "left_right_acc_exactly_equal": true
+  }
+]

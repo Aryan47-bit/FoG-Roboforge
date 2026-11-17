@@ -1,0 +1,11 @@
+# Use the CUDA index only for torch; use PyPI for other packages.
+# Python 3.14 on this machine. Exact observed environment: reports/environment_freeze.txt.
+torch==2.14.1+cu130
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+tensorflow==2.22.0rc0
+matplotlib
+# Optional device collection dependency:
+pyserial

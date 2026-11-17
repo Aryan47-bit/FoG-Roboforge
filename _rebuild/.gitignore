@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+artifacts/downloads/
+artifacts/recordings/
+artifacts/fogstar_index.sqlite
+artifacts/fogstar_index.sha256
+artifacts/parity_test.exe
+

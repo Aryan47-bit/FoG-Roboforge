@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "normalization_cases": 1000,
+  "max_absolute_error": 4.570312484020178e-07,
+  "alarm_transitions_checked": 1050,
+  "alarm_config": {
+    "high": 0.65,
+    "low": 0.45,
+    "confirm": 3,
+    "alpha": 0.6
+  },
+  "scope": "Host C++ clipping/normalization and selected alarm FSM only; no source-filter, sensor or TFLM-board parity claim"
+}
