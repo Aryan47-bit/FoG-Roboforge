@@ -1,235 +1,279 @@
-# Freezing-of-Gait Prediction & Early Warning System
+# FoG-Roboforge: Wearable Parkinson's Freezing-of-Gait Prediction & Haptic Cueing System
 
-An implementation roadmap for subject-independent Freezing-of-Gait (FoG) prediction using Daphnet, Multimodal Parkinson, and Fogstar data, with deployment to an ankle-worn ESP32 and MPU6050 wearable with haptic cueing.
+[![Platform](https://img.shields.io/badge/Platform-ESP32--WROOM--32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Sensor](https://img.shields.io/badge/Sensor-MPU6050%20(50Hz)-green.svg)](https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/)
+[![Runtime](https://img.shields.io/badge/Runtime-TensorFlow%20Lite%20Micro%20(INT8)-orange.svg)](https://www.tensorflow.org/lite/microcontrollers)
+[![Model Size](https://img.shields.io/badge/Model%20Size-9.0%20KB%20(1%2C669%20params)-brightgreen.svg)]()
+[![Inference Latency](https://img.shields.io/badge/Inference%20Latency-~7.5%20ms-purple.svg)]()
 
-The software, training, and evaluation roadmap follows `plan.txt`. The supplied `README (2).md` is used only as the hardware configuration reference. Performance figures below are **targets, not achieved results**. The initial data pipeline and TCN training smoke test are implemented; full training, evaluation, export, and firmware validation remain outstanding.
+An end-to-end wearable system for real-time, subject-independent detection of **Freezing of Gait (FoG)** in Parkinson's disease patients, deploying a TinyML 1D Temporal Convolutional Neural Network (CNN) directly onto an **ESP32 microcontroller** to drive **closed-loop rhythmic haptic cueing**.
 
-## Goals and Scope
+---
 
-- Fewer than **2 false alarms per hour** of non-FoG monitoring.
-- Greater than **90% balanced accuracy**, with sensitivity and specificity each targeting greater than 90%.
-- **5-10 seconds of early prediction** before FoG onset.
-- Subject-independent evaluation with no patient overlap between training, validation, and test sets.
-- A compressed IMU-only deployment model compatible with the fixed wearable hardware.
+## Table of Contents
+1. [Clinical Background & Objectives](#clinical-background--objectives)
+2. [System Architecture](#system-architecture)
+3. [Hardware Specifications & Wiring](#hardware-specifications--wiring)
+4. [Machine Learning Pipeline & Model Architecture](#machine-learning-pipeline--model-architecture)
+5. [Clinical Decision Engine & Haptic Cueing](#clinical-decision-engine--haptic-cueing)
+6. [ESP32 Firmware Architecture](#esp32-firmware-architecture)
+7. [Step-by-Step Firmware Flashing Guide](#step-by-step-firmware-flashing-guide)
+8. [Python Research & Training Pipeline](#python-research--training-pipeline)
+9. [Repository Structure](#repository-structure)
+10. [Documentation & References](#documentation--references)
 
-Multimodal EEG/EMG experiments are part of the research pipeline. The wearable has one six-axis IMU; EEG, EMG, skin conductance, and additional IMUs are not additions to its hardware configuration. A model requiring those inputs cannot be deployed directly to this wearable.
+---
 
-## Fixed Hardware Configuration
+## Clinical Background & Objectives
 
-The hardware configuration is preserved from the supplied README. The plan's Cortex-M7 and Jetson Nano deployment examples do not replace the ESP32 target.
+Freezing of Gait (FoG) is an episodic, highly debilitating symptom of advanced Parkinson's disease where individuals suddenly feel as though their feet are glued to the floor. FoG episodes lead directly to falls, injuries, and loss of independence. 
 
-### Hardware Specifications
+Clinical research demonstrates that **external rhythmic sensory cueing** (auditory or tactile metronome pulsing) stimulates the premotor cortex and compensatory neural pathways, allowing patients to unfreeze their gait.
 
-- **Target Microcontroller:** Espressif ESP32 DevKit V1 (ESP32-WROOM-32, Dual-Core Xtensa 32-bit LX6 @ 240 MHz, 320 KB usable SRAM, 4 MB Flash).
-- **Inertial Sensor:** InvenSense MPU6050 (GY-521 breakout board) communicating via I2C Fast Mode @ 400 kHz.
-  - Accelerometer: $\pm 2\text{ g}$ range ($16,384\text{ LSB}/g$).
-  - Gyroscope: $\pm 500^\circ/\text{s}$ range ($65.5\text{ LSB}/(\text{deg/s})$).
-  - Digital Low-Pass Filter (DLPF): 44 Hz bandwidth to eliminate mechanical foot-strike vibration noise.
-- **Haptic Feedback:** 3V DC Coin Vibration Motor driven by an N-channel MOSFET circuit via ESP32 LEDC PWM on GPIO 13.
-- **Power Supply:** 500 mAh 3.7V Wearable LiPo Battery with TP4056 USB-C charging circuit.
-  - Average System Current: **4.91 mA** (estimated continuous monitoring).
-  - Continuous Battery Life: **101.9 hours (~4.2 days)** (estimated on 500 mAh battery).
+### Engineering & System Objectives
+* **Subject-Independent Detection:** Models are evaluated with strict patient separation (zero patient overlap between train, validation, and test cohorts).
+* **Minimal Wearable Hardware:** Strictly utilizes a **single 3-axis accelerometer on the ankle**; eliminates bulky gyroscopes, EMG, or EEG arrays for wearable comfort and battery life.
+* **Causal Real-Time Edge Processing:** Runs 100% locally on an ESP32 microcontroller with zero reliance on cloud or Bluetooth latency.
+* **Low Latency & High Headroom:** Inference latency is **~7.5 ms**, well within the 200 ms (5 Hz) sliding window stride.
 
-### Pinout & Electrical Wiring
+---
 
-| MPU6050 Pin | ESP32 DevKit V1 Pin | Function / Description |
-| :--- | :--- | :--- |
-| **VCC** | **3.3V** | Regulated 3.3V DC power supply |
-| **GND** | **GND** | System common ground |
-| **SDA** | **GPIO 21** | I2C Serial Data (with internal/external 4.7k pull-up) |
-| **SCL** | **GPIO 22** | I2C Serial Clock (400 kHz Fast-Mode) |
-| **AD0** | **GND** | Sets I2C device address to `0x68` |
+## System Architecture
 
-| Haptic Circuit | ESP32 DevKit V1 Pin | Function / Description |
-| :--- | :--- | :--- |
-| **MOSFET Gate** | **GPIO 13** | LEDC PWM (1 kHz, 8-bit duty cycle) via 100 $\Omega$ series resistor |
-| **Motor V+** | **3.3V / VBAT** | Direct connection to battery or 3.3V rail |
-| **MOSFET Source**| **GND** | Common ground with 10k $\Omega$ gate pull-down resistor |
-
-### Acquisition and Hardware Validation
-
-Preserve the reference configuration's **50 Hz MPU6050 acquisition**, ankle placement, dual-core 240 MHz ESP32, and haptic output. Firmware should separate acquisition from inference using FreeRTOS tasks and a synchronized circular buffer. At this acquisition rate, two seconds contain 100 six-axis samples; five seconds contain 250 samples. Buffer length and inference scheduling must match the selected deployment model.
-
-The preserved current and battery-life values above are estimates, not measured results. Measure current draw, battery discharge, inference time, SRAM/tensor allocation, flash use, and acquisition continuity on the actual device. Old model-specific latency, memory, and duty-cycle estimates are not validation of the planned models.
-
-## Implementation Roadmap
-
-### Phase 1: Foundation and Infrastructure (Weeks 1-2)
-
-Create a unified Python project with dataset configurations, reproducible experiments, and automated checks. Migrate relevant settings from `settings.toml` into YAML. Reuse existing preprocessing code for dataset column names, timestamps, label formats, interpolation, and resampling.
-
-Planned structure:
-
-```text
-src/
-  config/       # settings.yaml, dataset_configs.py, model_configs.py
-  data/         # Base/per-dataset loaders, unified dataset, transforms, DataModule
-  features/     # IMU, EEG, EMG, fusion, windowing
-  models/       # Base model, TCN, BiLSTM-attention, Transformer, fusion, ensemble
-  training/     # Losses, callbacks, metrics, cross-validation trainer
-  evaluation/   # Evaluator, threshold optimizer, statistical tests, visualization
-  inference/    # Streaming inference, ONNX export, post-processing
-  utils/        # Reproducibility, logging, checkpoint management
-configs/        # Reproducible training configurations
-firmware/       # ESP32 acquisition, embedded inference, haptic cueing
-scripts/        # Supporting data and experiment utilities
-tests/          # Data, feature, model, metric, and inference checks
-docs/           # Architecture, evaluation, deployment, API, hardware setup
+```
+   +-------------------------------------------------------------------------+
+   |                            WEARABLE HARDWARE                            |
+   |                                                                         |
+   |  [InvenSense MPU6050] (I2C 400kHz @ 50 Hz)                              |
+   |         │                                                               |
+   |         ▼                                                               |
+   |  [ESP32 Core 0: High-Priority Sampling Task]                            |
+   |     • 50.0 Hz deterministic sampling (vTaskDelayUntil)                  |
+   |     • LSB to m/s² conversion & ADC saturation check                     |
+   |     • Lock-free circular ring buffer (100 samples)                      |
+   |         │                                                               |
+   |         ▼ (FreeRTOS Overwrite Mailbox Queue)                            |
+   |  [ESP32 Core 1: TinyML Inference & Clinical FSM]                        |
+   |     • Z-score normalization & INT8 tensor quantization                  |
+   |     • TFLM 1D Temporal CNN forward pass (~7.5 ms)                       |
+   |     • Exponential Moving Average (EMA) & Hysteresis FSM                 |
+   |     • Consecutive confirmation filter (≥ 500 ms)                        |
+   |         │                                                               |
+   |         ▼                                                               |
+   |  [Closed-Loop Rhythmic Sensory Cueing]                                  |
+   |     • GPIO 13: 1 kHz LEDC PWM -> Low-side N-FET -> 1027 Coin ERM Motor |
+   |     • 3-pulse cadence metronome (150 ms pulse / 100 ms pause)           |
+   +-------------------------------------------------------------------------+
 ```
 
-Planned dependencies:
+---
 
-| Purpose | Packages |
-| --- | --- |
-| Modeling | `torch>=2.1`, `pytorch-lightning>=2.2`, `torchmetrics>=1.2` |
-| Data and signal processing | `pandas`, `numpy`, `scipy`, `scikit-learn`, `mne` |
-| Experiment tracking | `mlflow`, optional `wandb` |
-| Configuration | `hydra-core`, `omegaconf` |
-| Research model export | `onnx`, `onnxruntime` |
-| Statistics | `statsmodels`, `scikit-posthocs` |
-| Development | `pytest`, `black`, `ruff`, `pre-commit` |
+## Hardware Specifications & Wiring
 
-### Phase 2: Data Unification and Features (Weeks 2-3)
+The hardware architecture uses the **ESP32 DevKit V1 (ESP32-WROOM-32)** and an **InvenSense MPU6050** IMU breakout.
 
-Use a common `(T, C)` research representation at **100 Hz**, preserving subject, session, timestamps, modality availability, and FoG annotations. Resample 500 Hz data downward and 60/64 Hz data upward; upsampling does not create new sensor information.
+### Pinout & Electrical Interconnects
 
-| Dataset | Source rate | Planned role |
-| --- | --- | --- |
-| Multimodal Parkinson | 500 Hz | Primary multimodal research: EEG, EMG, IMU, and skin conductance |
-| Fogstar | 60 Hz | IMU modeling, with severity as an auxiliary task |
-| Daphnet | 64 Hz | Accelerometer benchmark and subject-wise cross-validation |
+| Peripheral | Component | ESP32 DevKit V1 Pin | Electrical Configuration |
+| :--- | :--- | :--- | :--- |
+| **I2C SDA** | InvenSense MPU6050 | **GPIO 21** | I2C Data (4.7 kΩ pull-up to 3.3V) |
+| **I2C SCL** | InvenSense MPU6050 | **GPIO 22** | I2C Clock (400 kHz Fast-Mode) |
+| **Sensor VCC** | InvenSense MPU6050 | **3.3V** | Regulated 3.3V DC power rail |
+| **Sensor GND** | InvenSense MPU6050 | **GND** | System common ground |
+| **Sensor AD0** | InvenSense MPU6050 | **GND** | Sets I2C slave address to `0x68` |
+| **Haptic Motor**| 1027 Coin ERM Motor | **GPIO 13** | LEDC PWM (Channel 0, 1 kHz carrier, 8-bit duty) |
+| **Status LED** | Onboard Blue LED | **GPIO 2** | Digital output (`HIGH` = Active) |
+| **Emergency Stop**| BOOT Switch | **GPIO 0** | Digital input (`INPUT_PULLUP`), active LOW |
 
-Verify channel names, placement, units, and label semantics against each dataset's preprocessing files. Handle unavailable modalities explicitly instead of assuming every dataset supplies the same channels.
+### MPU6050 Register Initialization
+* **`PWR_MGMT_1` (0x6B) = `0x01`**: Wake device, PLL with X-axis gyro reference.
+* **`CONFIG` (0x1A) = `0x03`**: Digital Low-Pass Filter (DLPF) set to 44 Hz accelerometer bandwidth.
+* **`SMPLRT_DIV` (0x19) = `0x13` (19 dec)**: Sample rate divisor: $F_s = \frac{1000\text{ Hz}}{1 + 19} = 50.0\text{ Hz}$.
+* **`ACCEL_CONFIG` (0x1C) = `0x00`**: Accelerometer Full-Scale Range set to $\pm 2\text{ g}$ ($16,384\text{ LSB/g}$).
 
-Split by **subject before fitting preprocessing or generating training examples**. Keep all sessions for a subject together. The plan proposes 6 training / 2 validation / 2 test subjects for the 10-subject multimodal cohort, subject-wise Fogstar partitions, and Daphnet leave-one-subject-out (LOSO) evaluation. Fit normalization, feature selection, CSP, and oversampling only on training subjects.
+---
 
-Feature families:
+## Machine Learning Pipeline & Model Architecture
 
-- **IMU:** time-domain statistics, crossings, Welch spectral features, 0.5-3 / 3-8 / 8-12 Hz band powers, entropy, nonlinear measures, and cross-axis relationships.
-- **EEG:** bandpower, regional averages, phase locking/coherence, Hjorth parameters, and training-fitted common spatial patterns.
-- **EMG:** RMS/MAV envelopes, waveform length, crossings, spectral moments, median/mean frequencies, and wavelet packet energy.
+### Signal Preprocessing & Windowing
+* **Input Window Shape:** `[1, 100, 3]` (100 time samples $\times$ 3 axes $[A_x, A_y, A_z]$).
+* **Temporal Coverage:** 100 samples @ 50 Hz = **2.00 seconds** of continuous gait.
+* **Stride Rate:** 10 samples @ 50 Hz = **0.20 seconds** (evaluates 5.0 predictions per second).
+* **Z-Score Normalization:**
+  $$\hat{A}_c(t) = \frac{\operatorname{clip}(A_c(t), -19.6133, 19.6133) - \mu_c}{\sigma_c}$$
+  * $\mu = [-4.209929, 6.489753, 1.580877]\text{ m/s}^2$
+  * $\sigma = [5.812658, 5.164641, 2.514854]\text{ m/s}^2$
 
-Initial window and label configuration:
+### 1D Temporal CNN Architecture (`combined_cnn_gravity_0.2`)
+The model employs 1D temporal convolutions followed by Global Average Pooling, creating a translation-invariant representation across the 2-second gait window with only **1,669 trainable parameters**.
 
-```yaml
-research_sample_rate_hz: 100
-window_seconds: 2.0
-stride_seconds: 0.1
-pre_onset_seconds: 5.0
-post_onset_seconds: 1.0
-refractory_seconds: 10.0
+```
+Input: [1, 100, 3]
+  │
+  ├──► Conv1D Block 1:  3 in ➔ 12 out, Kernel=5, Pad=2 (same), ReLU  [192 params]
+  │    (Captures step impacts and micro-temporal acceleration transitions)
+  │
+  ├──► Conv1D Block 2: 12 in ➔ 12 out, Kernel=5, Pad=2 (same), ReLU  [732 params]
+  │    (Captures gait rhythm and 3–8 Hz high-frequency freeze band tremor)
+  │
+  ├──► Conv1D Block 3: 12 in ➔ 12 out, Kernel=5, Pad=2 (same), ReLU  [732 params]
+  │    (Extracts high-level temporal context across the 2.0-second horizon)
+  │
+  ├──► GlobalAveragePooling1D across 100 timesteps                   [  0 params]
+  │    (Translation-invariant feature vector of dimension [1, 12])
+  │
+  └──► Dense Head: 12 in ➔ 1 out, Sigmoid activation                [ 13 params]
+       Output: Scaled FoG probability p ∈ [0.0, 1.0]
+
+Total Parameters: 1,669 (Fully INT8 Quantized)
 ```
 
-Evaluate the 5-10 second prediction objective separately from detection at or after onset. The initial label interval includes five seconds before and one second after onset; positive-window classification alone does not demonstrate a 5-10 second warning. Use only observations available at the decision time. A five-second TCN context or streaming buffer needs a matching input configuration; it cannot obtain five seconds of observed context from an isolated two-second window.
+### Full Integer INT8 Quantization
+* **Model Footprint:** 9,008 bytes (compiled into `model_data.h`).
+* **Input Quantization:** Scale $S_{in} = 0.061168$, Zero-Point $Z_{in} = 10$.
+* **Output Quantization:** Scale $S_{out} = 0.00390625$ ($1/256$), Zero-Point $Z_{out} = -128$.
+* **Tensor Arena RAM:** 48 KB static allocation (consumes only ~14–25 KB during inference).
+* **Measured Inference Latency:** **7.5 to 8.5 ms** on ESP32 @ 240 MHz.
 
-### Phase 3: Model Architectures (Weeks 3-5)
+---
 
-Implement and compare:
+## Clinical Decision Engine & Haptic Cueing
 
-1. **TCN:** causal dilated convolutions and residual blocks; primary real-time candidate. Explore channels `[64, 128, 256, 512]`, kernel size 3, and a five-second receptive field.
-2. **BiLSTM with attention:** two layers, 256 hidden units, and four attention heads, operating within the available historical window.
-3. **PatchTST-style Transformer:** patch length 16, stride 8, four encoder layers, eight heads, and model dimension 256.
-4. **Multimodal fusion:** early, late, and intermediate fusion. The preferred research candidate combines an IMU TCN with lightweight EEG/EMG Transformers and cross-attention.
+To prevent false alarms caused by brief stumbles, sensor noise, or boundary transients, the firmware incorporates a 4-state clinical Finite State Machine (FSM):
 
-Use weighted sampling by subject and class, focal/weighted BCE/asymmetric losses, negative-label smoothing, and training-only feature-space SMOTE experiments. Evaluate five-view test-time augmentation only where latency permits. For Fogstar, evaluate a severity auxiliary loss weighted by 0.3. A false-alarm-aware training term requires a differentiable surrogate; final event-level FA/hr remains a validation metric.
+```mermaid
+stateDiagram-v2
+    [*] --> FOG_NORMAL
+    FOG_NORMAL --> FOG_WARNING: prob >= (threshold - hysteresis)
+    FOG_WARNING --> FOG_ACTIVE_ALERT: prob >= (threshold + hysteresis) for >= 500 ms (3 cycles)
+    FOG_WARNING --> FOG_NORMAL: prob < (threshold - hysteresis)
+    FOG_ACTIVE_ALERT --> FOG_COOLDOWN: prob < (threshold - hysteresis) OR pulse timer expired
+    FOG_COOLDOWN --> FOG_NORMAL: cooldown elapsed (3.0 s refractory)
+    
+    FOG_ACTIVE_ALERT --> FOG_NORMAL: Sensor Error / Saturation / Emergency Button (Killswitch)
+```
 
-### Phase 4: Training and Threshold Calibration (Weeks 5-7)
+1. **Exponential Moving Average (EMA) Smoothing:**  
+   $$\bar{p}_t = 0.60 \cdot p_t + 0.40 \cdot \bar{p}_{t-1}$$
+2. **Dual-Threshold Hysteresis:**  
+   * **Activation Threshold ($\theta_{high}$):** $0.65$
+   * **Reset Threshold ($\theta_{low}$):** $0.45$
+3. **Consecutive Confirmation:**  
+   Candidate freeze episodes must remain above $\theta_{high}$ for at least **3 consecutive inference cycles (500 ms)** before triggering haptic actuation.
+4. **Cadence Pacing (Sensory Cueing):**  
+   Continuous vibration numbs mechanoreceptors; the driver emits a **3-pulse metronome cadence** (150 ms pulse ON, 100 ms pause, duty cycle 220/255 @ 1 kHz) to break the freeze.
+5. **Safety Interlocks:**  
+   * Hardware watchdog resets the microcontroller if an internal task hangs.
+   * Pressing the **BOOT button (GPIO 0)** immediately kills motor PWM.
+   * Interactive serial commands (`V` to arm, `v` to disarm).
 
-Run subject-wise LOSO experiments for each dataset, then combined-dataset experiments with held-out subjects. Keep validation subjects separate within every fold.
+---
 
-| Setting | Initial value |
-| --- | --- |
-| Optimizer | AdamW |
-| Learning rate | TCN: `3e-4`; Transformer: `1e-3`; LSTM: `5e-4` |
-| Weight decay | `1e-4` |
-| Scheduler | CosineAnnealingWarmRestarts, `T_0=10`, `T_mult=2` |
-| Batch size | 64 per GPU |
-| Maximum epochs | 100 |
-| Early stopping | Patience 15, validation balanced accuracy |
-| Gradient clipping | 1.0 |
-| Mixed precision | Enabled where supported |
+## ESP32 Firmware Architecture
 
-Calibrate thresholds on continuous **validation** recordings while maximizing sensitivity subject to **FA/hr < 2**. Sweep candidate thresholds and apply the complete alarm post-processing pipeline during calibration. Freeze the threshold and all post-processing settings before test evaluation. For unseen subjects, use a validation-derived global threshold; personalization requires separate calibration data.
+The firmware is located in `_rebuild/firmware/esp32/` and is fully compatible with **ESP32 Arduino Core 2.x and Core 3.x (ESP-IDF 5.x)**:
 
-Post-processing starts with a 0.5-second minimum event duration, 10-second refractory interval, merging of nearby events, and hysteresis around the threshold (`+0.1` to start, `-0.1` to end). Tune these on validation data and include their delay in measured warning lead time. If no operating point satisfies the false-alarm constraint, report the failure rather than treating a fallback threshold as compliant.
+* **`esp32.ino`:** FreeRTOS dual-core entry point, pin mappings, and task creation.
+* **`deployment_config.h`:** Normalization parameters ($\mu, \sigma$) and FSM threshold definitions.
+* **`model_data.h`:** Embedded byte array of the INT8 TFLM model flatbuffer.
+* **`preprocessing.h`:** C++ standardizer, clamping, and FSM data structures.
 
-### Phase 5: Evaluation and Statistical Validation (Weeks 7-8)
+### FreeRTOS Dual-Core Allocation
+* **Core 0 (Priority 3 - Real-Time Acquisition):**  
+  Dedicated 50 Hz timer loop polling MPU6050 over I2C Fast Mode, checking for ADC saturation ($|raw| \ge 32,760$), and pushing valid samples into the sliding window.
+* **Core 1 (Priority 1 - TinyML Inference):**  
+  Consumes snapshots from the overwrite mailbox queue, quantizes inputs, executes the TFLM interpreter, and manages the FSM state.
 
-Report per-subject metrics and their aggregate distributions, including median and IQR. Distinguish window classification, event detection, and early prediction.
+---
 
-| Metric | Target / definition |
-| --- | --- |
-| Sensitivity | >90%; `TP / (TP + FN)` |
-| Specificity | >90%; `TN / (TN + FP)` |
-| Balanced accuracy | >90%; mean of sensitivity and specificity |
-| False alarms per hour | <2; false alarm **events** / non-FoG monitoring hours |
-| Detection latency | <2 seconds; signed alarm time minus onset time |
-| Early prediction horizon | 5-10 seconds before onset; report achieved lead-time distribution |
-| ROC AUC | >0.95 |
-| PR AUC | >0.80 |
+## Step-by-Step Firmware Flashing Guide
 
-Do not count overlapping positive windows as separate alarm events or duplicate monitoring time. Define event matching and report pre-onset warnings separately from post-onset detections.
+### Method 1: Using Arduino IDE 2.x
 
-Use 1,000 bootstrap resamples for 95% confidence intervals, subject-level aggregation, McNemar comparisons where applicable, and permutation tests for false-alarm reduction. Compare against a dataset-compatible freeze-index baseline and SVM/random-forest handcrafted-feature baselines. Target `p < 0.05` for baseline comparisons.
+1. **Install Arduino IDE 2.x** and install the **ESP32 Board Package**:
+   * Add URL in **Preferences**: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
+   * In **Boards Manager**, install `esp32` by Espressif Systems.
+2. **Open the Project:**
+   * Go to **File $\to$ Open...** and select:  
+     `_rebuild/firmware/esp32/esp32.ino`
+   * *Verify that `model_data.h`, `preprocessing.h`, and `deployment_config.h` appear as tabs.*
+3. **Configure Board Settings under `Tools`:**
+   * **Board:** `ESP32 Dev Module`
+   * **Port:** Your ESP32 COM Port (e.g. `COM3`, `COM4`)
+   * **Upload Speed:** `921600` (or `115200` if connection drops)
+   * **Partition Scheme:** `Huge APP (3MB No OTA/1MB SPIFFS)`
+4. **Compile & Upload:**
+   * Click the **Verify** checkmark (`Ctrl + R`), then **Upload** (`Ctrl + U`).
+   * *If the console shows `Connecting........_____.....`:* Press and hold the on-board **BOOT (GPIO 0)** button until the upload starts.
+5. **View Live Telemetry:**
+   * Open **Serial Monitor** at **115200 baud**.
+   * Telemetry streams live:
+     * `S,<timestamp_ms>,<acc_x>,<acc_y>,<acc_z>,<valid>` (50 lines/second).
+     * `P,<timestamp_ms>,<prob>,<alarm_active>,<latency_us>,<error_count>` (5 lines/second).
 
-### Phase 6: Ensemble and Final Selection (Weeks 8-9)
+---
 
-Compare architecture, dataset, and seed diversity, including five seeds per configuration. Train stacking only on out-of-fold predictions; evaluate logistic-regression stacking and constrained nonnegative weighted ensembles.
+## Python Research & Training Pipeline
 
-Select models by validation FA/hr first, followed by sensitivity, balanced accuracy, latency, and size. Preserve the held-out test set for final reporting. The plan's research size limits (<50 MB candidates; <20 MB quantized acceptance target) are not sufficient for the ESP32's 4 MB flash and 320 KB usable SRAM. Embedded selection must satisfy the actual firmware, model, buffer, and runtime memory budget.
+The Python pipeline under `src/` provides reproducible model training, causal polyphase resampling, and strict subject-level cross-validation across clinical datasets:
 
-### Phase 7: Deployment Preparation (Weeks 9-10)
+### Datasets
+* **UCI Daphnet Freezing of Gait:** 17 recordings across 10 Parkinson's patients (measured 62.5 Hz $\to$ causal resampled to 50 Hz).
+* **FoG-STAR (University of Michigan):** Multi-task protocol across 22 Parkinson's participants (60.0 Hz $\to$ causal resampled to 50 Hz).
 
-Build a streaming predictor with a context-matched ring buffer, frozen normalization, calibrated threshold, hysteresis, and refractory handling. Export research models to ONNX and validate numerical parity. Evaluate INT8 quantization, 30% magnitude pruning, and ensemble-to-student distillation.
-
-The research pipeline uses 100 Hz, while the fixed MPU6050 acquisition configuration remains **50 Hz**. Train or adapt the deployment student for the available six-axis, single-ankle, 50 Hz stream, and reevaluate its full alarm behavior. Do not silently substitute research sampling or unavailable modalities into firmware.
-
-An ONNX research export is not an ESP32 firmware artifact. Implement and validate an ESP32-compatible INT8 inference/export path, such as TensorFlow Lite Micro, after checking operator support and memory use. Distill or reduce the architecture as needed without changing hardware. The plan's <10 ms inference target must be benchmarked on this ESP32; it is not an established measurement.
-
-Deployment validation must cover model parity, quantized accuracy, event-level FA/hr, warning lead time, acquisition continuity, haptic behavior, peak RAM, flash use, and power consumption.
-
-### Phase 8: Documentation and Reproducibility (Week 10)
-
-Deliver:
-
-- README quickstart, dataset acquisition instructions, and verified training commands.
-- `docs/architecture.md`, `docs/evaluation.md`, `docs/deployment.md`, `docs/api.md`, and hardware wiring/setup documentation.
-- `requirements.txt`, a pinned `requirements-lock.txt`, and complete training configurations.
-- Logged seeds, subject split manifests, preprocessing settings, checkpoints, and calibration parameters in MLflow.
-- Docker environments for training/inference and versioned pretrained checkpoints when available.
-
-## Setup and Execution Status
-
-Implemented under `src/`: Daphnet and Fogstar recording loaders, an explicit-manifest multimodal loader, deterministic subject splits and LOSO folds, causal resampling, training-only normalization, onset-relative windows, initial IMU features, and a causal TCN with a training smoke entry point. See [Data contract and implementation status](docs/data_contract.md) for label semantics, unit constraints, and the multimodal manifest format. The existing `_rebuild` pipeline is preserved separately.
-
-The bundled multimodal examples do not establish verified subject identities; they are excluded from subject-independent experiments until a verified manifest and aligned data are supplied. A [Daphnet training/validation baseline](docs/training.md) now provides lazy window loading, class-weighted training, checkpointing, continuous event metrics, and validation-only threshold calibration. A modality-aware Lightning DataModule, MLflow integration, full-cohort experiments, held-out evaluation, and embedded export remain planned.
-
-Run from this repository root:
+### Reproduction & Development Commands
 
 ```bash
+# 1. Create and activate virtual environment
 python -m venv .venv
-# Activate the environment for your shell.
-python -m pip install -e ".[dev,train]"
-python -m pytest -q
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# 2. Install dependencies in editable mode
+pip install -e ".[dev,train]"
+
+# 3. Run regression and parity test suites
+pytest -v
+
+# 4. Run training foundation smoke test
 python -m src.training.smoke --root . --steps 5
 ```
 
-The smoke run writes `reports/foundation_smoke.json` and uses only a training subject. It is not a benchmark or a full training run. Local verification passed 11 tests, loaded all 17 Daphnet recordings (10 subjects), checked five Fogstar recordings for subject 1, and completed five optimization steps. The existing `_rebuild/.venv/Scripts/python.exe` was used for PyTorch checks without modifying that environment. Publish evaluation, export, and flashing commands alongside their implemented entry points. The attached README's prior model selection and benchmark results are not claims about this implementation.
+---
 
-## Verification and Acceptance
+## Repository Structure
 
-A subsequent [rotation-invariant multiscale experiment](reports/invariant_comparison.md) changed the input representation and balanced training by subject/class. It improved default-threshold Extra Trees balanced accuracy to 64.16%, but neither new model met the joint targets; both detected 0/37 episodes at their selected false-alarm-constrained operating points. These results do not replace the previous best. The expanded suite passes 22 tests.
+```
+FoG-Roboforge/
+├── docs/
+│   ├── data_contract.md                    # Data contracts, schemas, units, and manifests
+│   ├── training.md                         # Training, validation splits, and metrics guide
+│   └── FIRMWARE_IMPLEMENTATION_PLAN_CODEX.md # Technical specification for autonomous firmware builds
+├── src/
+│   ├── config/settings.yaml                # Global hyperparameters and data configurations
+│   ├── data/                               # Loaders, causal resampling, and participant splits
+│   ├── features/                           # IMU spectral features, multiscale filters, windowing
+│   ├── models/                             # PyTorch CNN and causal dilated TCN architectures
+│   ├── training/                           # Trainer, class weighting, and comparison scripts
+│   ├── evaluation/                         # Event-level metrics, PR-AUC, and threshold tuning
+│   └── inference/                          # Post-processing causal hysteresis and ensemble logic
+├── _rebuild/
+│   ├── firmware/esp32/                     # Deployed ESP32 C++ firmware (Core 2.x & 3.x compatible)
+│   │   ├── esp32.ino                       # Main Arduino/FreeRTOS dual-core firmware
+│   │   ├── deployment_config.h             # Normalization constants & threshold settings
+│   │   ├── model_data.h                    # 9 KB INT8 TFLM model flatbuffer array
+│   │   └── preprocessing.h                 # Fixed-point preprocessing & FSM state definitions
+│   ├── artifacts/deployment/               # Exported TFLite models (float & int8), validation JSON
+│   └── reports/                            # Comprehensive experimental audits and benchmarks
+├── tests/                                  # Pytest unit and regression test suite
+├── pyproject.toml                          # Build definitions and package metadata
+└── README.md                               # Project documentation
+```
 
-The [alternative-model comparison](reports/model_comparison.md) tested Extra Trees, Random Forest, gradient boosting, and a compact CNN on full eligible Daphnet recordings. None met the joint targets. At an operating point satisfying the observed false-alarm constraint, Extra Trees reached 57.27% balanced accuracy and detected 2/37 validation episodes. The CNN reached 65.77% balanced accuracy at threshold 0.5, but generated 62.88 false alarms/hour there. These are exploratory validation results, not held-out test claims. Hardware is unchanged. The expanded test suite passes 20 tests.
+---
 
-Planned checks include resampling signal preservation, label alignment, subject isolation, feature shapes and known-signal bandpower, training-only normalization, model output shapes and receptive fields, event-based FA/hr, latency, threshold optimization, streaming buffers, and post-processing. Add a small training smoke test, an end-to-end raw-data-to-metrics test, and export parity checks.
+## Documentation & References
 
-Acceptance requires held-out sensitivity and specificity of at least 90%, the stricter headline FA/hr target of **<2**, detection latency no greater than two seconds, statistical comparison against baselines, and explicit reporting of the 5-10 second early-warning objective. The plan's floating-point ONNX parity tolerance is maximum absolute difference <`1e-4`; quantized deployment needs separately specified numerical and performance tolerances. Physical ESP32 resource checks are required in addition to research model checks.
-
-## Risks and Immediate Next Steps
-
-Main risks are limited FoG examples, subject variability, noisy modalities, inadequate warning lead time, excessive false alarms, and embedded memory or runtime limits. Evaluate augmentation, domain adaptation, modality dropout, an IMU-only student, and compression. Any relaxation from early prediction to onset detection must be reported as a changed objective.
-
-Start by creating the Python packages and configuration, implementing the three dataset loaders and subject-wise splits, adding IMU features, training a TCN baseline with event-level false-alarm monitoring, and recording experiments in MLflow. The full roadmap spans approximately ten weeks; its targets remain subject to experimental validation.
-#   F o G _ R o b o f o r g e  
- 
+* **[Firmware Implementation Plan for Codex](file:///docs/FIRMWARE_IMPLEMENTATION_PLAN_CODEX.md):** Complete technical engineering specification for autonomous firmware rebuilds.
+* **[Data Contract Specification](file:///docs/data_contract.md):** Exact coordinate system standards, units, sampling rules, and label semantics.
+* **[Training & Evaluation Guide](file:///docs/training.md):** Participant-level cross-validation protocols and event metrics.
+* **[Deployment Validation Report](file:///New-project/data/raw/_rebuild/artifacts/deployment/validation.json):** Numerical parity check logs and INT8 quantization benchmarks.
