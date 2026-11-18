@@ -1,0 +1,15 @@
+# ESP32 firmware bench guide
+
+Use the ESP32 DevKit V1, MPU6050 at address 0x68 (SDA 21, SCL 22) and the existing MOSFET motor driver on GPIO 13. The deployed flatbuffer is the three-axis 50 Hz accelerometer CNN from the deployment directory. Feed acceleration in m/s² in sensor axis order.
+
+From the repository root run `pio run -d firmware -e esp32`. PlatformIO writes the application to `firmware/.pio/build/esp32/firmware.bin`. The `parity` environment additionally embeds 50 reference windows and prints measured and reference probabilities on boot. Both environments require all enabled boot checks to pass before sampling starts.
+
+Use a 115200 baud serial monitor. The motor starts disarmed. Send uppercase V to enable cueing and lowercase v to disarm. Holding BOOT disarms cueing. A bad sensor reading disarms it and clears buffered samples. Startup failure prints an error and blinks the status LED. The motor gives three 150 ms pulses spaced by 100 ms on a confirmed alert. Bench-check the gate with the actuator unloaded before evaluating cue delivery.
+
+Capture a ten-minute session with `python firmware/tools/serial_logger.py COM3 --seconds 600`, substituting the target port. Record the S sample timestamps, P inference time, H heap/stack statistics and E faults. Measure the physical motor gate during a disconnected sensor, a held button and an injected stall. A 5 ms ESP timer polls the button and drives PWM independently of the inference and sampling tasks; a scope measurement is required to establish stop latency. Device watchdog behavior, actual timing, parity and clinical performance require separate evidence.
+
+The host suite builds with CMake from the firmware directory or a C++14 compiler using `tests/host_parity_test.cpp` and the include directory. Generate the five boot vectors with `tools/export_test_vectors.py`. To regenerate the larger bank, run `tools/export_reference_bank.py` with TensorFlow and then `tools/bench_header.py`. The bank includes recorded acceleration and a synthetic saturation case. Activity-specific coverage depends on the available annotations.
+
+The primary image was linked with Arduino ESP32 2.0.14 and TensorFlowLite_ESP32 1.0.0. PlatformIO reports 406,813 bytes of flash and 70,800 bytes (69.14 KiB) of static RAM, including the 32 KiB tensor arena and reserved task stacks. Runtime heap, stack high-water marks and actual arena allocation need measurement on the board. Project sources compile with `-Wall -Werror`. The pinned dependencies emit build warnings.
+
+Host verification covered buffer wraparound, sustained alarm confirmation, cooldown and clipping/normalization/INT8 input parity for 50 windows (15,000 values). The 50-window bench image emits B packets containing vector index, actual probability and Python reference probability. A MODEL fault after those packets indicates that startup validation failed. Check for 50 passing B packets and subsequent S/P traffic. The bank uses archived windows, including a synthetic saturation case, with no verified turning labels. Sampling jitter, inference latency, watchdog reset, drop counts and physical motor cutoff remain open bench measurements.

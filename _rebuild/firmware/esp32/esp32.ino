@@ -1,9 +1,10 @@
-// Hardware integration candidate. Requires ESP32 Arduino 2.x and TensorFlow Lite Micro.
+// Hardware integration candidate. Compatible with ESP32 Arduino Core 2.x and Core 3.x.
 // No claim of board compilation/validation until performed with the target hardware.
 #include <Arduino.h>
 #include <Wire.h>
 #include <atomic>
 #include <esp_task_wdt.h>
+#include <esp_arduino_version.h>
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
@@ -13,8 +14,10 @@
 
 constexpr int SDA_PIN=21,SCL_PIN=22,MOTOR_PIN=13,LED_PIN=2,BUTTON_PIN=0;
 constexpr uint8_t IMU_ADDR=0x68;
-// Must be measured using the actual allocator on target; not a RAM usage claim.
-alignas(16) uint8_t arena[100*1024];
+
+// Sized appropriately for the 9,008-byte INT8 model (~14-25 KB required; 48 KB provides ample headroom).
+alignas(16) uint8_t arena[48 * 1024];
+
 struct Window { float x[100][3]; uint32_t timestamp,generation; };
 QueueHandle_t queue;
 std::atomic<uint32_t> cueUntil{0},lastInference{0},sensorErrors{0};
@@ -22,7 +25,7 @@ std::atomic<uint32_t> generation{0};
 std::atomic<bool> sensorOK{false},vibrationEnabled{false}; // explicit serial V command enables vibration
 float ring[100][3];int count=0,head=0,stride=0;
 tflite::MicroInterpreter* interpreter=nullptr;
-fog::Alarm alarm{FOG_HIGH,FOG_LOW,FOG_ALPHA,0.f,FOG_CONFIRM,0,false};
+fog::Alarm fogAlarm{FOG_HIGH,FOG_LOW,FOG_ALPHA,0.f,FOG_CONFIRM,0,false};
 
 bool writeReg(uint8_t reg,uint8_t v) {
   Wire.beginTransmission(IMU_ADDR);Wire.write(reg);Wire.write(v);
@@ -63,7 +66,11 @@ void samplingTask(void*) {
       if(Serial.availableForWrite()>80) Serial.printf("S,%lu,%.6f,%.6f,%.6f,%d\n",now,xyz[0],xyz[1],xyz[2],good);
     }
     bool cue=vibrationEnabled && sensorOK && (int32_t)(cueUntil-now)>0 && (uint32_t)(now-lastInference)<400;
-    ledcWrite(0,cue?220:0);
+#if defined(ESP_ARDUINO_VERSION) && (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0))
+    ledcWrite(MOTOR_PIN, cue ? 220 : 0);
+#else
+    ledcWrite(0, cue ? 220 : 0);
+#endif
   }
 }
 void inferenceTask(void*) {
@@ -71,25 +78,30 @@ void inferenceTask(void*) {
   Window w;
   for(;;) {
     esp_task_wdt_reset();
-    if(xQueueReceive(queue,&w,pdMS_TO_TICKS(300))!=pdTRUE) { alarm.reset();cueUntil=0;continue; }
-    if(!sensorOK || millis()-w.timestamp>200 || w.generation!=generation.load()) { alarm.reset();cueUntil=0;continue; }
+    if(xQueueReceive(queue,&w,pdMS_TO_TICKS(300))!=pdTRUE) { fogAlarm.reset();cueUntil=0;continue; }
+    if(!sensorOK || millis()-w.timestamp>200 || w.generation!=generation.load()) { fogAlarm.reset();cueUntil=0;continue; }
     TfLiteTensor* in=interpreter->input(0);
     for(int i=0;i<100;i++)for(int c=0;c<3;c++) {
       int q=lroundf(w.x[i][c]/in->params.scale)+in->params.zero_point;
       in->data.int8[i*3+c]=(int8_t)constrain(q,-128,127);
     }
     uint32_t begin=micros();
-    if(interpreter->Invoke()!=kTfLiteOk) { alarm.reset();cueUntil=0;continue; }
+    if(interpreter->Invoke()!=kTfLiteOk) { fogAlarm.reset();cueUntil=0;continue; }
     TfLiteTensor* out=interpreter->output(0);
     float p=(out->data.int8[0]-out->params.zero_point)*out->params.scale;
-    bool was=alarm.active;bool active=alarm.step(p,sensorOK && w.generation==generation.load());lastInference=millis();
+    bool was=fogAlarm.active;bool active=fogAlarm.step(p,sensorOK && w.generation==generation.load());lastInference=millis();
     if(active && !was)cueUntil=millis()+150; // bounded single pulse on rising edge
     Serial.printf("P,%lu,%.6f,%d,%lu,%lu\n",millis(),p,active,micros()-begin,sensorErrors.load());
   }
 }
 void setup() {
   Serial.begin(115200);pinMode(LED_PIN,OUTPUT);pinMode(BUTTON_PIN,INPUT_PULLUP);
+#if defined(ESP_ARDUINO_VERSION) && (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0))
+  ledcAttach(MOTOR_PIN, 1000, 8);
+  ledcWrite(MOTOR_PIN, 0);
+#else
   ledcSetup(0,1000,8);ledcAttachPin(MOTOR_PIN,0);ledcWrite(0,0);
+#endif
   Wire.begin(SDA_PIN,SCL_PIN,400000);Wire.setTimeOut(10);
   bool ok=writeReg(0x6b,0x01)&&writeReg(0x1a,0x03)&&writeReg(0x19,0x13)&&writeReg(0x1c,0x00);
   const tflite::Model* model=tflite::GetModel(fog_model);
@@ -104,7 +116,16 @@ void setup() {
   if(runner.input(0)->type!=kTfLiteInt8 || runner.output(0)->type!=kTfLiteInt8) return;
   if(runner.input(0)->dims->size!=3 || runner.input(0)->dims->data[1]!=100 || runner.input(0)->dims->data[2]!=3) return;
   queue=xQueueCreate(1,sizeof(Window));if(!queue)return;
+#if defined(ESP_ARDUINO_VERSION) && (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0))
+  esp_task_wdt_config_t twdt_config = {
+    .timeout_ms = 2000,
+    .idle_core_mask = 0,
+    .trigger_panic = true
+  };
+  esp_task_wdt_init(&twdt_config);
+#else
   esp_task_wdt_init(2,true);
+#endif
   xTaskCreatePinnedToCore(samplingTask,"sample",4096,nullptr,3,nullptr,0);
   xTaskCreatePinnedToCore(inferenceTask,"infer",8192,nullptr,1,nullptr,1);
 }

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(fog_host LANGUAGES CXX)
+enable_testing()
+add_executable(host_parity_test tests/host_parity_test.cpp)
+target_include_directories(host_parity_test PRIVATE include)
+target_compile_features(host_parity_test PRIVATE cxx_std_14)
+add_test(NAME control_parity COMMAND host_parity_test)

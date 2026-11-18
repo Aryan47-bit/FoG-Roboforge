@@ -1,0 +1,35 @@
+{
+  "purpose": "Training plumbing smoke test only; no validation/test performance",
+  "subject": "daphnet:S02",
+  "recording": "S02R01:42879",
+  "split": "train",
+  "split_manifest": {
+    "daphnet:S06": "test",
+    "daphnet:S07": "test",
+    "daphnet:S01": "validation",
+    "daphnet:S08": "validation",
+    "daphnet:S04": "train",
+    "daphnet:S03": "train",
+    "daphnet:S05": "train",
+    "daphnet:S10": "train",
+    "daphnet:S02": "train",
+    "daphnet:S09": "train"
+  },
+  "seed": 42,
+  "sample_rate_hz": 100,
+  "window_seconds": 5,
+  "batch_shape": [
+    32,
+    500,
+    9
+  ],
+  "positive_batch_windows": 5,
+  "receptive_field_samples": 509,
+  "losses": [
+    0.5811672806739807,
+    0.5539628267288208,
+    0.5285240411758423,
+    0.5051876902580261,
+    0.4836578965187073
+  ]
+}

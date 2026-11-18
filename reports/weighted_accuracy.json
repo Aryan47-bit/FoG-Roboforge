@@ -1,0 +1,58 @@
+{
+  "weights": {
+    "reports\\cnn_full_001\\validation_probabilities.npz": 0.4240366695443586,
+    "reports\\feature_comparison_001\\extra_trees_validation_probabilities.npz": 0.3504857527290328,
+    "reports\\feature_comparison_001\\hist_gradient_boosting_validation_probabilities.npz": 0.00909608162448867,
+    "reports\\feature_comparison_001\\random_forest_validation_probabilities.npz": 0.0862036646733904,
+    "reports\\invariant_comparison_001\\extra_trees_validation_probabilities.npz": 0.06250860868057112,
+    "reports\\invariant_comparison_001\\hist_gradient_boosting_validation_probabilities.npz": 0.06766922274815822
+  },
+  "threshold": 0.3202587017452363,
+  "balanced_accuracy": 0.6812414532106774,
+  "window_sensitivity": 0.8739763421292084,
+  "window_specificity": 0.48850656429214656,
+  "events": {
+    "pooled": {
+      "episodes": 37,
+      "detected": 5,
+      "false_alarms": 31,
+      "non_fog_seconds": 2290.0399999978895,
+      "other_alarms": 0,
+      "monitoring_seconds": 2592.99999999761,
+      "episode_sensitivity": 0.13513513513513514,
+      "fa_per_hour": 48.73277322671344,
+      "median_latency_seconds": -2.9799999999972897,
+      "early_detections": 4,
+      "warnings_5_to_10_seconds": 0
+    },
+    "subjects": {
+      "daphnet:S01": {
+        "episodes": 23,
+        "detected": 3,
+        "false_alarms": 21,
+        "non_fog_seconds": 1762.419999998383,
+        "other_alarms": 0,
+        "monitoring_seconds": 1866.999999998288,
+        "episode_sensitivity": 0.13043478260869565,
+        "fa_per_hour": 42.8955640540106,
+        "median_latency_seconds": -2.9799999999972897,
+        "early_detections": 3,
+        "warnings_5_to_10_seconds": 0
+      },
+      "daphnet:S08": {
+        "episodes": 14,
+        "detected": 2,
+        "false_alarms": 10,
+        "non_fog_seconds": 527.6199999995065,
+        "other_alarms": 0,
+        "monitoring_seconds": 725.9999999993215,
+        "episode_sensitivity": 0.14285714285714285,
+        "fa_per_hour": 68.23092377095954,
+        "median_latency_seconds": -2.0699999999981173,
+        "early_detections": 1,
+        "warnings_5_to_10_seconds": 0
+      }
+    }
+  },
+  "test_evaluated": false
+}

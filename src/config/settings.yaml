@@ -1,0 +1,15 @@
+seed: 42
+research_sample_rate_hz: 100
+window_seconds: 2.0
+stride_seconds: 0.1
+pre_onset_seconds: 5.0
+post_onset_seconds: 1.0
+refractory_seconds: 10.0
+hardware:
+  controller: ESP32-WROOM-32
+  sensor: MPU6050
+  acquisition_hz: 50
+  cpu_mhz: 240
+  sda_gpio: 21
+  scl_gpio: 22
+  haptic_gpio: 13

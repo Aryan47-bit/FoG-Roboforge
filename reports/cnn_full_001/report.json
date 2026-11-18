@@ -1,0 +1,4949 @@
+{
+  "status": "baseline_run",
+  "test_evaluated": false,
+  "arguments": {
+    "root": ".",
+    "output": "reports\\cnn_full_001",
+    "epochs": 10,
+    "patience": 4,
+    "batch_size": 128,
+    "seed": 42,
+    "model": "cnn",
+    "device": "cuda",
+    "max_seconds": null,
+    "max_train_windows": null
+  },
+  "splits": {
+    "daphnet:S06": "test",
+    "daphnet:S07": "test",
+    "daphnet:S01": "validation",
+    "daphnet:S08": "validation",
+    "daphnet:S04": "train",
+    "daphnet:S03": "train",
+    "daphnet:S05": "train",
+    "daphnet:S10": "train",
+    "daphnet:S02": "train",
+    "daphnet:S09": "train"
+  },
+  "train_windows_used": 103621,
+  "validation_windows": 23297,
+  "recordings": {
+    "train": [
+      {
+        "subject": "daphnet:S02",
+        "recording": "S02R01:42879",
+        "source": "daphnet\\dataset\\S02R01.txt",
+        "samples": 39900
+      },
+      {
+        "subject": "daphnet:S02",
+        "recording": "S02R02:11839",
+        "source": "daphnet\\dataset\\S02R02.txt",
+        "samples": 101400
+      },
+      {
+        "subject": "daphnet:S03",
+        "recording": "S03R01:42879",
+        "source": "daphnet\\dataset\\S03R01.txt",
+        "samples": 85900
+      },
+      {
+        "subject": "daphnet:S03",
+        "recording": "S03R01:103679",
+        "source": "daphnet\\dataset\\S03R01.txt",
+        "samples": 55900
+      },
+      {
+        "subject": "daphnet:S03",
+        "recording": "S03R02:16639",
+        "source": "daphnet\\dataset\\S03R02.txt",
+        "samples": 25900
+      },
+      {
+        "subject": "daphnet:S03",
+        "recording": "S03R03:41599",
+        "source": "daphnet\\dataset\\S03R03.txt",
+        "samples": 32900
+      },
+      {
+        "subject": "daphnet:S04",
+        "recording": "S04R01:47359",
+        "source": "daphnet\\dataset\\S04R01.txt",
+        "samples": 155900
+      },
+      {
+        "subject": "daphnet:S04",
+        "recording": "S04R01:154879",
+        "source": "daphnet\\dataset\\S04R01.txt",
+        "samples": 50900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R01:28159",
+        "source": "daphnet\\dataset\\S05R01.txt",
+        "samples": 30900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R01:51199",
+        "source": "daphnet\\dataset\\S05R01.txt",
+        "samples": 37900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R01:78719",
+        "source": "daphnet\\dataset\\S05R01.txt",
+        "samples": 21900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R01:95999",
+        "source": "daphnet\\dataset\\S05R01.txt",
+        "samples": 14900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R02:21759",
+        "source": "daphnet\\dataset\\S05R02.txt",
+        "samples": 55900
+      },
+      {
+        "subject": "daphnet:S05",
+        "recording": "S05R02:63999",
+        "source": "daphnet\\dataset\\S05R02.txt",
+        "samples": 46900
+      },
+      {
+        "subject": "daphnet:S09",
+        "recording": "S09R01:26879",
+        "source": "daphnet\\dataset\\S09R01.txt",
+        "samples": 14900
+      },
+      {
+        "subject": "daphnet:S09",
+        "recording": "S09R01:37119",
+        "source": "daphnet\\dataset\\S09R01.txt",
+        "samples": 16900
+      },
+      {
+        "subject": "daphnet:S09",
+        "recording": "S09R01:51199",
+        "source": "daphnet\\dataset\\S09R01.txt",
+        "samples": 54900
+      },
+      {
+        "subject": "daphnet:S09",
+        "recording": "S09R01:102399",
+        "source": "daphnet\\dataset\\S09R01.txt",
+        "samples": 71900
+      },
+      {
+        "subject": "daphnet:S09",
+        "recording": "S09R01:153599",
+        "source": "daphnet\\dataset\\S09R01.txt",
+        "samples": 14900
+      },
+      {
+        "subject": "daphnet:S10",
+        "recording": "S10R01:38399",
+        "source": "daphnet\\dataset\\S10R01.txt",
+        "samples": 79900
+      },
+      {
+        "subject": "daphnet:S10",
+        "recording": "S10R01:94079",
+        "source": "daphnet\\dataset\\S10R01.txt",
+        "samples": 142900
+      }
+    ],
+    "validation": [
+      {
+        "subject": "daphnet:S01",
+        "recording": "S01R01:47999",
+        "source": "daphnet\\dataset\\S01R01.txt",
+        "samples": 29900
+      },
+      {
+        "subject": "daphnet:S01",
+        "recording": "S01R01:70399",
+        "source": "daphnet\\dataset\\S01R01.txt",
+        "samples": 114900
+      },
+      {
+        "subject": "daphnet:S01",
+        "recording": "S01R02:15999",
+        "source": "daphnet\\dataset\\S01R02.txt",
+        "samples": 44900
+      },
+      {
+        "subject": "daphnet:S08",
+        "recording": "S08R01:39679",
+        "source": "daphnet\\dataset\\S08R01.txt",
+        "samples": 22900
+      },
+      {
+        "subject": "daphnet:S08",
+        "recording": "S08R01:63359",
+        "source": "daphnet\\dataset\\S08R01.txt",
+        "samples": 15900
+      },
+      {
+        "subject": "daphnet:S08",
+        "recording": "S08R01:81919",
+        "source": "daphnet\\dataset\\S08R01.txt",
+        "samples": 20900
+      },
+      {
+        "subject": "daphnet:S08",
+        "recording": "S08R01:111999",
+        "source": "daphnet\\dataset\\S08R01.txt",
+        "samples": 16900
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5016105613995783,
+      "validation_balanced_accuracy_at_0_5": 0.6081293780294216
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.37993714727759803,
+      "validation_balanced_accuracy_at_0_5": 0.5944848651236916
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.333161402591754,
+      "validation_balanced_accuracy_at_0_5": 0.6576892306433024
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.2859865919432419,
+      "validation_balanced_accuracy_at_0_5": 0.6188828449062505
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.2436169263916403,
+      "validation_balanced_accuracy_at_0_5": 0.5947261126658798
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.21181572045121713,
+      "validation_balanced_accuracy_at_0_5": 0.6063953196769284
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.178054939428897,
+      "validation_balanced_accuracy_at_0_5": 0.5993157781542113
+    }
+  ],
+  "calibration": {
+    "status": "feasible",
+    "best": {
+      "threshold": 0.99,
+      "feasible": true,
+      "metrics": {
+        "pooled": {
+          "episodes": 37,
+          "detected": 0,
+          "false_alarms": 0,
+          "non_fog_seconds": 2290.0399999978895,
+          "other_alarms": 0,
+          "monitoring_seconds": 2592.99999999761,
+          "episode_sensitivity": 0.0,
+          "fa_per_hour": 0.0,
+          "median_latency_seconds": null,
+          "early_detections": 0,
+          "warnings_5_to_10_seconds": 0
+        },
+        "subjects": {
+          "daphnet:S01": {
+            "episodes": 23,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 1762.419999998383,
+            "other_alarms": 0,
+            "monitoring_seconds": 1866.999999998288,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "daphnet:S08": {
+            "episodes": 14,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 527.6199999995065,
+            "other_alarms": 0,
+            "monitoring_seconds": 725.9999999993215,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          }
+        }
+      }
+    },
+    "sensitivity_target_met": false,
+    "target_fa_per_hour_strict": 2.0,
+    "constraint": "each_validation_subject",
+    "sweep": [
+      {
+        "threshold": 0.01,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.02,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.03,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.04,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.05,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.060000000000000005,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.06999999999999999,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.08,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.09,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.09999999999999999,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 7,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 11.004174599580455,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 3,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 6.127937722001515,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.11,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 32,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 50.30479816951065,
+            "median_latency_seconds": -1.4399999999986903,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 23,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 46.980855868678276,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 9,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 61.40783139386359,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.12,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -1.4399999999986903,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.13,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -1.4399999999986903,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.14,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -1.4399999999986903,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.15000000000000002,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 36,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 56.59289794069948,
+            "median_latency_seconds": -1.4399999999986903,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.16,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 2,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.05405405405405406,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -3.1449999999971396,
+            "early_detections": 2,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -4.849999999995589,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.17,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 2,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.05405405405405406,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -3.0449999999972306,
+            "early_detections": 2,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -1.4399999999986903,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -4.649999999995771,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.18000000000000002,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -3.4199999999968895,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 2,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.08695652173913043,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -2.42999999999779,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -4.649999999995771,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.19,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -3.4199999999968895,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 2,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.08695652173913043,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -2.42999999999779,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -4.649999999995771,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.2,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 36,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 56.59289794069948,
+            "median_latency_seconds": -3.4199999999968895,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 2,
+              "false_alarms": 24,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.08695652173913043,
+              "fa_per_hour": 49.02350177601212,
+              "median_latency_seconds": -2.42999999999779,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -4.649999999995771,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.21000000000000002,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -3.4199999999968895,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 2,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.08695652173913043,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -2.42999999999779,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -4.649999999995771,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.22,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -3.4199999999968895,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.4199999999968895,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -3.989999999996371,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.23,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -3.379999999996926,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.379999999996926,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.24000000000000002,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -3.379999999996926,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.379999999996926,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.25,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 37,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 58.164922883496686,
+            "median_latency_seconds": -3.3199999999969805,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.3199999999969805,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.26,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -3.3199999999969805,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.3199999999969805,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.27,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -3.3199999999969805,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.3199999999969805,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.28,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -3.3199999999969805,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -3.3199999999969805,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.29000000000000004,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -3.1549999999971305,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 25,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 51.06614768334595,
+              "median_latency_seconds": -2.20999999999799,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.3,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -3.1549999999971305,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -2.20999999999799,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -3.889999999996462,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.31,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.20999999999799,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -2.20999999999799,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.839999999997417,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.32,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -3.159999999997126,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -3.159999999997126,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.839999999997417,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.33,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -2.9799999999972897,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.839999999997417,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.34,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -2.9799999999972897,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.7899999999974625,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.35000000000000003,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 27,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 55.15143949801363,
+              "median_latency_seconds": -2.9799999999972897,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.7899999999974625,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.36000000000000004,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 27,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 55.15143949801363,
+              "median_latency_seconds": -2.9799999999972897,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 13,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 88.7002009022474,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.37,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 27,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 55.15143949801363,
+              "median_latency_seconds": -2.9799999999972897,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.38,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.8999999999973625,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 27,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 55.15143949801363,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.39,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.8999999999973625,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 28,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 57.194085405347465,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.4,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.8999999999973625,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 28,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 57.194085405347465,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.41000000000000003,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 29,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 59.23673131268131,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -4.549999999995862,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.42000000000000004,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 42,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 66.02504759748273,
+            "median_latency_seconds": -2.9799999999972897,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -4.349999999996044,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.43,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 42,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 66.02504759748273,
+            "median_latency_seconds": -2.8199999999974352,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 12,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 81.87710852515144,
+              "median_latency_seconds": -2.2499999999979536,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.44,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.8199999999974352,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 29,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 59.23673131268131,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -2.2499999999979536,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.45,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.5349999999976944,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 29,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 59.23673131268131,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -0.8199999999992542,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.46,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.8199999999974352,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -2.2499999999979536,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.47000000000000003,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 5,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.13513513513513514,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.8199999999974352,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.8999999999973625,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -2.2499999999979536,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.48000000000000004,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.5799999999976535,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.619999999997617,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.9199999999991633,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.49,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.5799999999976535,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.619999999997617,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.8199999999992542,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.5,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.5799999999976535,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.619999999997617,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.8199999999992542,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.51,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.419999999997799,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.5799999999976535,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.6699999999993906,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.52,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.4499999999977717,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.8199999999974352,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.46999999999957254,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.53,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.4499999999977717,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.8199999999974352,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.419999999999618,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.54,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.399999999997817,
+            "early_detections": 5,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 30,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 61.27937722001514,
+              "median_latency_seconds": -2.739999999997508,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.419999999999618,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.55,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.419999999997799,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -3.059999999997217,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.419999999999618,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.56,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.419999999997799,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.419999999999618,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.5700000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 42,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 66.02504759748273,
+            "median_latency_seconds": -2.5899999999976444,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -1.4499999999986812,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.5800000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.75999999999749,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -2.9199999999973443,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.59,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.5699999999976626,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -1.2499999999988631,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.6,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.5699999999976626,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.7499999999993179,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.61,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 6,
+            "false_alarms": 42,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.16216216216216217,
+            "fa_per_hour": 66.02504759748273,
+            "median_latency_seconds": -2.5699999999976626,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 5,
+              "false_alarms": 32,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.21739130434782608,
+              "fa_per_hour": 65.36466903468282,
+              "median_latency_seconds": -2.75999999999749,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.4499999999995907,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.62,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 43,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 67.59707254027994,
+            "median_latency_seconds": -2.3799999999978354,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 32,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 65.36466903468282,
+              "median_latency_seconds": -2.5699999999976626,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -0.4499999999995907,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.63,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 42,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 66.02504759748273,
+            "median_latency_seconds": -2.3799999999978354,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -2.4699999999977535,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 11,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 75.0540161480555,
+              "median_latency_seconds": -0.3499999999996817,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.64,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 43,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 67.59707254027994,
+            "median_latency_seconds": -2.1799999999980173,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 33,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 67.40731494201665,
+              "median_latency_seconds": -2.3699999999978445,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 10,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 68.23092377095954,
+              "median_latency_seconds": -0.3499999999996817,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.65,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 43,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 67.59707254027994,
+            "median_latency_seconds": -2.1799999999980173,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -2.2699999999979354,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 9,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 61.40783139386359,
+              "median_latency_seconds": -0.3499999999996817,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.66,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 8,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.21621621621621623,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.2699999999979354,
+            "early_detections": 8,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -2.2699999999979354,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 7,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 47.76164663967168,
+              "median_latency_seconds": -1.9649999999982128,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.67,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.3599999999978536,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -2.2699999999979354,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 6,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 40.93855426257572,
+              "median_latency_seconds": -3.579999999996744,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.68,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 8,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.21621621621621623,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.089999999998099,
+            "early_detections": 8,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -2.089999999998099,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 5,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 34.11546188547977,
+              "median_latency_seconds": -2.48499999999774,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.6900000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 8,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.21621621621621623,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -1.98999999999819,
+            "early_detections": 8,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -1.98999999999819,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": -2.0849999999981037,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.7000000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 9,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.24324324324324326,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -1.9599999999982174,
+            "early_detections": 9,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 7,
+              "false_alarms": 35,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.30434782608695654,
+              "fa_per_hour": 71.49260675668434,
+              "median_latency_seconds": -1.9599999999982174,
+              "early_detections": 7,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": -1.534999999998604,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.7100000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 9,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.24324324324324326,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -1.8199999999983447,
+            "early_detections": 9,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 7,
+              "false_alarms": 37,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.30434782608695654,
+              "fa_per_hour": 75.57789857135201,
+              "median_latency_seconds": -1.8199999999983447,
+              "early_detections": 7,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 4,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 27.292369508383818,
+              "median_latency_seconds": -1.534999999998604,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.72,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 11,
+            "false_alarms": 40,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.2972972972972973,
+            "fa_per_hour": 62.88099771188831,
+            "median_latency_seconds": -2.3599999999978536,
+            "early_detections": 11,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 8,
+              "false_alarms": 38,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.34782608695652173,
+              "fa_per_hour": 77.62054447868584,
+              "median_latency_seconds": -2.019999999998163,
+              "early_detections": 8,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 3,
+              "false_alarms": 2,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.21428571428571427,
+              "fa_per_hour": 13.646184754191909,
+              "median_latency_seconds": -2.6799999999975626,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.73,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 10,
+            "false_alarms": 41,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.2702702702702703,
+            "fa_per_hour": 64.45302265468553,
+            "median_latency_seconds": -2.519999999997708,
+            "early_detections": 10,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 8,
+              "false_alarms": 39,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.34782608695652173,
+              "fa_per_hour": 79.66319038601969,
+              "median_latency_seconds": -2.019999999998163,
+              "early_detections": 8,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 2,
+              "false_alarms": 2,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.14285714285714285,
+              "fa_per_hour": 13.646184754191909,
+              "median_latency_seconds": -3.0349999999972397,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.74,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 39,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 5,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 61.308972769091106,
+            "median_latency_seconds": -2.3599999999978536,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 38,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 77.62054447868584,
+              "median_latency_seconds": -2.019999999998163,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 2,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -2.6799999999975626,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.75,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 4,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -2.3599999999978536,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 37,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 75.57789857135201,
+              "median_latency_seconds": -2.019999999998163,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -2.6799999999975626,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.76,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 38,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 4,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 59.7369478262939,
+            "median_latency_seconds": -1.7599999999983993,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 37,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 75.57789857135201,
+              "median_latency_seconds": -1.7199999999984357,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -2.6799999999975626,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.77,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 8,
+            "false_alarms": 36,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 4,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.21621621621621623,
+            "fa_per_hour": 56.59289794069948,
+            "median_latency_seconds": -2.219999999997981,
+            "early_detections": 8,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 7,
+              "false_alarms": 35,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.30434782608695654,
+              "fa_per_hour": 71.49260675668434,
+              "median_latency_seconds": -1.7599999999983993,
+              "early_detections": 7,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 1,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -2.6799999999975626,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.78,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 8,
+            "false_alarms": 36,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.21621621621621623,
+            "fa_per_hour": 56.59289794069948,
+            "median_latency_seconds": -1.9199999999982538,
+            "early_detections": 7,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 7,
+              "false_alarms": 35,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.30434782608695654,
+              "fa_per_hour": 71.49260675668434,
+              "median_latency_seconds": -1.7599999999983993,
+              "early_detections": 6,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -2.0799999999981083,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.79,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 7,
+            "false_alarms": 35,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.1891891891891892,
+            "fa_per_hour": 55.02087299790227,
+            "median_latency_seconds": -1.8799999999982901,
+            "early_detections": 6,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 6,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.2608695652173913,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -2.3699999999978445,
+              "early_detections": 5,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 1,
+              "false_alarms": 1,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.07142857142857142,
+              "fa_per_hour": 6.823092377095954,
+              "median_latency_seconds": -1.8799999999982901,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.8,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 34,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 53.44884805510507,
+            "median_latency_seconds": -1.7599999999983993,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 34,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 69.44996084935049,
+              "median_latency_seconds": -1.7599999999983993,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.81,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 33,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 51.87682311230786,
+            "median_latency_seconds": -0.8499999999992269,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 33,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 67.40731494201665,
+              "median_latency_seconds": -0.8499999999992269,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.8200000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 31,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 48.73277322671344,
+            "median_latency_seconds": -0.9599999999991269,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 31,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 63.322023127348984,
+              "median_latency_seconds": -0.9599999999991269,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.8300000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 29,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 1,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 45.58872334111903,
+            "median_latency_seconds": -0.7599999999993088,
+            "early_detections": 3,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 29,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 1,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 59.23673131268131,
+              "median_latency_seconds": -0.7599999999993088,
+              "early_detections": 3,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.8400000000000001,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 26,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 40.8726485127274,
+            "median_latency_seconds": -0.15999999999985448,
+            "early_detections": 2,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 26,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 53.10879359067979,
+              "median_latency_seconds": -0.15999999999985448,
+              "early_detections": 2,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.85,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 3,
+            "false_alarms": 21,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 2,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.08108108108108109,
+            "fa_per_hour": 33.01252379874136,
+            "median_latency_seconds": 0.23999999999978172,
+            "early_detections": 1,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 3,
+              "false_alarms": 21,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 2,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.13043478260869565,
+              "fa_per_hour": 42.8955640540106,
+              "median_latency_seconds": 0.23999999999978172,
+              "early_detections": 1,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.86,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 4,
+            "false_alarms": 16,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.10810810810810811,
+            "fa_per_hour": 25.152399084755324,
+            "median_latency_seconds": -2.624999999997499,
+            "early_detections": 4,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 4,
+              "false_alarms": 16,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.17391304347826086,
+              "fa_per_hour": 32.68233451734141,
+              "median_latency_seconds": -2.624999999997499,
+              "early_detections": 4,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.87,
+        "feasible": false,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 1,
+            "false_alarms": 10,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 3,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.02702702702702703,
+            "fa_per_hour": 15.720249427972078,
+            "median_latency_seconds": 0.9099999999991724,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 1,
+              "false_alarms": 10,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 3,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.043478260869565216,
+              "fa_per_hour": 20.426459073338382,
+              "median_latency_seconds": 0.9099999999991724,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.88,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.89,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.9,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.91,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.92,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.93,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.9400000000000001,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.9500000000000001,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.9600000000000001,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.97,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.98,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.99,
+        "feasible": true,
+        "metrics": {
+          "pooled": {
+            "episodes": 37,
+            "detected": 0,
+            "false_alarms": 0,
+            "non_fog_seconds": 2290.0399999978895,
+            "other_alarms": 0,
+            "monitoring_seconds": 2592.99999999761,
+            "episode_sensitivity": 0.0,
+            "fa_per_hour": 0.0,
+            "median_latency_seconds": null,
+            "early_detections": 0,
+            "warnings_5_to_10_seconds": 0
+          },
+          "subjects": {
+            "daphnet:S01": {
+              "episodes": 23,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 1762.419999998383,
+              "other_alarms": 0,
+              "monitoring_seconds": 1866.999999998288,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            },
+            "daphnet:S08": {
+              "episodes": 14,
+              "detected": 0,
+              "false_alarms": 0,
+              "non_fog_seconds": 527.6199999995065,
+              "other_alarms": 0,
+              "monitoring_seconds": 725.9999999993215,
+              "episode_sensitivity": 0.0,
+              "fa_per_hour": 0.0,
+              "median_latency_seconds": null,
+              "early_detections": 0,
+              "warnings_5_to_10_seconds": 0
+            }
+          }
+        }
+      }
+    ]
+  }
+}
